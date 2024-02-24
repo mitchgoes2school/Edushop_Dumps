@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--Style-->
+    <link rel="stylesheet" href="output.css">
+    <!--ICONS-->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--Fonts-->
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Lexend Tera' rel='stylesheet'>
+    <!--EDUSHOP FONTS-->
+    <style>
+        body{
+            font-family: 'Poppins';
+        }
+        h2{
+            font-family:'Lexend Tera';
+        }
+        .slide > img {
+            display: block;
+        }
+        .slide {
+            opacity: 0;
+            transform: translate(-50%,-50%);
+            transition: 200ms opacity ease-in-out;
+            transition-delay: 200ms;   
+        }
+        .slide[data-active] {
+            opacity: 1;
+            z-index: 1;
+            transition-delay: 0ms;
+        }
+        .bidSummary{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+        .viewBid{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+    </style>
+</head>
+<body>
+    <!--whole-container-->
+    <div class="container">
+        <!--Header-->
+        <header class="header bg-gray-100 px-2 w-full">
+            <nav class="nav flex justify-between items-center">
+                <div>
+                    <img class="w-95 h-10" src="img/logos.png" alt="logo">
+                </div>
+                <div class="flex items-center gap-4 md:hidden">
+                    <button class="showModal fa fa-search cursor-pointer bg-gray-100 border-gray-100 hover:border-gray-200 hover:bg-gray-200 p-2 rounded-full"style="font-size: 18px;"></button>
+                    <button class="mobileNotifBtn fa fa-bell border-2 bg-gray-100 border-gray-100 hover:border-gray-200 hover:bg-gray-200 p-2 rounded-full" style="font-size: 18px; color: transparent; -webkit-text-stroke: 2px black;"></button>
+                    <ion-icon class="menuBtn mr-2 text-3xl cursor-pointer bg-gray-100 border-gray-100 hover:border-gray-200 hover:bg-gray-200 p-1 rounded-full"name="menu-outline"></ion-icon>
+                </div>
+                <div class="nav-links text-xs md:static md:min-h-fit absolute bg-gray-100 min-h-[13vh] left-0 md:w-auto w-full flex items-center px-5 top-[-100%]">
+                    <ul class="flex md:flex-row flex-col md:items-center md:gap-2 gap-1 text-center">
+                        <li class="hover:text-orange-500"><a class="cursor-pointer">Help</a></li>
+                        <span class="hidden md:block">|</span>
+                        <li class="webNotifBtn hover:text-orange-500"><a class="cursor-pointer"><i class="fa fa-bell"></i></a></li>
+                        <span class="hidden md:block">|</span>
+                        <li class="profileBtn hover:text-orange-500"><a class="cursor-pointer">Ralph</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <!--Notification-->
+            <div class="webNotif bg-gray-100 w-52 h-auto absolute right-1 rounded-md px-4 py-2 hidden">
+                <div class="bg-transparent hover:bg-gray-300 px-2 rounded-md">
+                    <a class="text-xs" href="#"><span class="font-bold">Borgard</span> sent you an offer</a>
+                </div>
+                <div class="bg-transparent hover:bg-gray-300 px-2 rounded-md">
+                    <a class="text-xs" href="#"><span class="font-bold">Borgard</span> sent you an offer</a>
+                </div>
+                <div class="bg-transparent hover:bg-gray-300 px-2 rounded-md">
+                    <a class="text-xs" href="#"><span class="font-bold">Borgard</span> sent you an offer</a>
+                </div>
+            </div>
+            <!--Profile Menu-->
+            <div class="webMenu px-4 py-2 bg-gray-100 w-52 h-auto absolute right-1 rounded-md hidden">
+                <div class="bg-transparent hover:bg-gray-300 px-2 rounded-md">
+                    <a class="text-sm" href="#"><span class="mr-2 mt-2"><ion-icon name="person-circle-outline"></ion-icon></span>My profile</a>
+                </div>
+                <div class="bg-transparent hover:bg-gray-300 px-2 rounded-md">
+                    <a class="text-sm" href="#"><span class="mr-2 mt-2"><ion-icon name="list-circle-outline"></ion-icon></span>Listing</a>
+                </div>
+                <div class="bg-transparent hover:bg-gray-300 px-2 rounded-md">
+                    <a class="text-sm" href="#"><span class="mr-2 mt-2"><ion-icon name="eye-outline"></ion-icon></span>Watchlist</a>
+                </div>
+                <div class="bg-transparent hover:bg-gray-300 px-2 rounded-md">
+                    <a class="text-sm" href="#"><span class="mr-2 mt-2"><ion-icon name="log-in-outline"></ion-icon></span>Logout</a>
+                </div>
+            </div>
+            <!--Search Modal-->
+            <div class="modal h-screen w-[%100] ml-10 mr-10 pt-5 hidden">
+                <button class="cancelBtn font-bold ml-3 mr-5 md:mr-10  hover:text-gray-400 absolute md:right-5 right-0">Cancel</button>
+                <center>
+                    <input class="w-[70%] md:w-96 rounded-full pl-2 border-2 border-gray-400" type="text" name="s" id="s" placeholder="Search">
+                    <br><br>
+                    <span class="text-gray-500">Popular Search Items</span>
+                </center>
+               
+                
+                
+            </div>
+            <div class="showMenu h-screen w-full hidden">
+                <div class="px-5 pt-5 ">
+                    <h1 class="font-bold">Menu</h1>
+                </div>
+                <div class="px-5 flex border-b-2 border-gray-400">
+                    <div>
+                        <img src="img/profile.jpg" alt="profile" class="w-10 h-10 rounded-full mt-2">
+                    </div>
+                    <div class="mb-5">
+                        <p class="mx-2 mt-2 text-xs font-bold">Ralph Evan D. Cabellon</p>
+                        <a class="mx-2 text-xs text-blue-700 underline" href="#">Edit Profile</a>  
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 sm:grid-cols-3 px-5 py-3 gap-2 border-b-2">
+                    <div class="border-2 border-white rounded-md w-40 h-20 bg-white text-center justify-center pt-2 shadow-lg drop-shadow-lg">
+                        <a class="font-bold"href="#">Listing</a><br>
+                        <span><i class="fa fa-address-book-o"></i></span>
+                    </div>
+                    <div class="border-2 border-white rounded-md w-40 h-20 bg-white text-center justify-center pt-2 shadow-lg drop-shadow-lg">
+                        <a class="font-bold"href="#">Favorites</a><br>
+                        <span><i class="fa fa-heart"></i></span>
+                    </div>
+                    <div class="border-2 border-white rounded-md w-40 h-20 bg-white text-center justify-center pt-2 shadow-lg drop-shadow-lg">
+                        <a class="font-bold"href="#">Watchist</a><br>
+                        <span><i class="fa fa-eye"></i></span>
+                    </div>
+                    <div class="border-2 border-white rounded-md w-40 h-20 bg-white text-center justify-center pt-2 shadow-lg drop-shadow-lg">
+                        <a class="font-bold"href="#">Listing</a>
+                    </div>
+                    <div class="border-2 border-white rounded-md w-40 h-20 bg-white text-center justify-center pt-2 shadow-lg drop-shadow-lg">
+                        <a class="font-bold"href="#">Listing</a>
+                    </div>
+                    <div class="border-2 border-white rounded-md w-40 h-20 bg-white text-center justify-center pt-2 shadow-lg drop-shadow-lg">
+                        <a class="font-bold"href="#">Listing</a>
+                    </div>
+                </div>
+                <div class="mt-5">
+                    <button class="w-full border-2 border-gray-600 bg-gray-600 text-white rounded-xl font-bold cursor-pointer">Logout</button>
+                </div>
+                
+
+            </div>
+        </header>
+
+        <!--Menu Option-->
+        <div class="text-center font-bold text-3xl py-2">
+            <h2>EDUSHOP</h2>
+        </div>
+        <div class="py-2" >
+
+           <nav class="flex justify-center">
+            <ul class="flex md:gap-40 gap-10 font-bold">
+                <li class="hover:text-orange-500"><a class="text-orange-500" href="#">HOME</a></li>
+                <li class="hover:text-orange-500"><a href="#">SELL</a></li>
+                <li class="hover:text-orange-500"><a href="#">AUCTION</a></li>
+            </ul>
+           </nav>
+           <style>
+           </style>
+            <div class="hidden md:block float-end mr-4">
+                <button class="webSearchBtn border-2 border-gray-500 p-1 w-36 rounded-full font-bold text-gray-400 bg-transparent hover:bg-gray-100 hover:text-gray-800 hover:border-gray-800"><span class="fa fa-search mr-1"></span>Search</button>
+                <button class="fa fa-heart mr-4 border-2 bg-white border-white hover:border-gray-200 hover:bg-gray-200 p-2 rounded-full" style="font-size: 20px; color: transparent; -webkit-text-stroke: 2px black;"></button>
+            </div>
+        </div>
+
+        <!--Main-->
+        <br><br>
+        
+        <div class="main md:ml-32 md:mr-32 ml-5 mr-5">
+            <div class="py-3">
+                <h3 class="font-bold text-black">Bid Item</h3>
+            </div>
+            <div class="border-t-2 border-gray-400">
+                <!--container-->
+                <div class="mx-10 grid md:grid-cols-2 grid-cols-1 mt-5 gap-2">
+                    <div class="border-0 border-gray-400 shadow-lg drop-shadow-lg flex justify-center items-center" >
+                            <div class="">
+                                <img class="imgBtn w-52 h-52 hover:w-60 hover:h-60 cursor-pointer"src="img/laptop.png" alt="">
+                            </div>
+                    </div>
+                    
+                    <div class="px-5 py-5 border-2 border-gray-400 shadow-lg drop-shadow-lg">
+                        <div class="grid md:grid-cols-2 grid-cols-1 border-b-2 border-gray-400 mb-2">
+                            <div>
+                                <h2 class="font-bold">HP LAPTOP</h2>
+                                <p class="font-bold"><span>₱</span>10,000.00</p> 
+                                <p class="text-xs">1 pcs.</p>
+                                <p class="text-xs">Used - Like New</p>
+                                <p class="text-xs font-bold">Description</p>
+                                <p class="text-xs mb-2">Need Cash for my tuition fee.</p>
+                            </div>
+                            <div class=" border-gray-600 mb-5 p-2">
+                                <center>
+                                    <p class="text-xs">Current bid: <span class="font-bold">₱</span><span class="font-bold">10,000.00</span></p>
+                                    <input type="text" name=".." id=".." placeholder="Bid ammount" class="bid pl-2 w-full border-2 border-gray-500 mt-2">
+                                    <button class="bidBtn w-full border-2 border-orange-500 rounded-md bg-orange-500 text-white font-bold mt-2 hover:bg-orange-700 hover:border-orange-700" >Bid</button>
+                                </center>
+                                <button class="viewBidBtn text-xs text-blue-600 mt-5 underline float-end cursor-pointer">View Bidders</button>
+                            </div>
+                        </div>
+                        <p class="text-xs font-bold">Seller's Information</p>
+                        <p class="font-bold">Ralph Evan D. Cabellon</p>
+                        <p class="text-xs">09298898789</p>
+                        <p class="text-xs">Bulacao Cebu City</p>
+                        <p class="font-bold"><span class="fa fa-check-circle text-blue-500 mr-1"></span>Top 1 board passer</p>
+                    </div>
+                    
+                </div>
+                <div class="viewBid w-72 h-auto bg-gray-100 rounded-md px-2 pb-2 border-2 border-gray-400 shadow-lg drop-shadow-lg hidden">
+                    <button class="bidCloseBtn float-end px-2 py-1 hover:bg-gray-300 rounded-full">&#10006;</button><br>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <div class="">
+                                <p class="text-xs font-bold">Name</p>
+                            </div>
+                            <div class="">
+                                <p class="text-xs">Ralph Evan D. Cabellon</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="">
+                                <p class="text-xs font-bold">Ammount</p>
+                            </div>
+                            <div class="">
+                                <p class="text-xs"><span>₱</span>10,000</p>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+               
+                
+                
+            </div>
+            
+        </div>
+         <!--Bid summary-->
+         <div class="bidSummary bg-gray-100 w-72 h-auto px-2 pb-5 border-2 border-gray-400 drop-shadow-lg shadow-lg rounded-md hidden">
+            <button class="closeSummary float-end text-base  px-3 py-1 text-gray-500 hover:bg-gray-200 rounded-full hidden">&#10006;</button>
+            <p class="text-sm mt-5 mx-4">Are you sure you want to bid ₱<span class="font-bold">10,000</span>?</p>
+            <center>
+                <div class="successBid hidden">
+                    <i class="fa fa-check-circle text-green-500" style="font-size:36px"></i>
+                    <p class="text-sm">Bid Successfully!</p>
+                </div>
+            </center> 
+            <div class="mt-5 flex justify-center">
+                <button class="noBtn w-20 border-2 border-red-500 mr-1 rounded-md text-white bg-red-500 font-bold hover:bg-red-700 hover:border-red-700">No</button>
+                <button class="yesBtn w-20 border-2 border-green-500 ml-1 rounded-md text-white bg-green-500 font-bold hover:bg-green-700 hover:border-green-700">Yes</button>
+            </div> 
+        </div>
+    
+        <!--try if col is working-->
+        
+        <!--footer-->
+        <div class="bg-gray-100 h-16 mt-5">
+
+        </div>
+    </div>
+    <div class="showImg w-full h-screen bg-white p-5 flex justify-center items-center relative hidden">
+        <button class="closeBtn absolute right-10 top-10 text-2xl  px-3 py-1 text-gray-500 hover:bg-gray-200 rounded-full">&#10006;</button>
+        <div class="w-full md:h-60 h-32 bg-black bg-opacity-10 flex justify-center items-center relative " data-carousel>
+            <button class="prev absolute left-10 text-3xl text-gray-400 py-1 px-4 hover:bg-gray-200 rounded-full" data-carousel-button="prev">&#10094;</button>
+            <button class="next absolute right-10 text-3xl text-gray-400 py-1 px-4 hover:bg-gray-200 rounded-full" data-carousel-button="next">&#10095;</button>
+            <ul data-slides>
+                <li class="slide absolute md:top-1/2 md:right-[30%]" data-active>
+                    <img class="md:w-60 md:h-60 h-32 w-32" src="img/laptop.png" alt="...">
+                </li>
+                <li class="slide absolute md:top-1/2 md:right-[30%]">
+                    <img class="md:w-60 md:h-60 h-32 w-32" src="img/logos.png" alt="...">
+                </li>
+                <li class="slide absolute md:top-1/2 md:right-[30%]">
+                    <img class="md:w-60 md:h-60 h-32 w-32" src="img/profile.jpg" alt="...">
+                </li>
+            </ul>
+            
+        </div>
+    </div>
+    <!--JavaScripts-->
+    <script>
+        /**const navLinks = document.querySelector('.nav-links')
+        function menu(e){
+            e.name = e.name === 'menu' ? 'close' : 'menu'
+            navLinks.classList.toggle('top-[8%]')
+        }*/
+        
+        const nav = document.querySelector('.nav')
+        const modal = document.querySelector('.modal')
+        const showModal = document.querySelector('.showModal')
+        const menuBtn = document.querySelector('.menuBtn')
+        const showMenu = document.querySelector('.showMenu')
+        const main = document.querySelector('.main')
+
+        showModal.addEventListener('click',function(){
+            nav.classList.add('hidden')
+            modal.classList.remove('hidden')
+        })
+        const cancelBtn = document.querySelector('.cancelBtn')
+        cancelBtn.addEventListener('click',function(){
+            nav.classList.remove('hidden')
+            modal.classList.add('hidden')
+            showMenu.classList.add('hidden')
+
+        })
+        
+        menuBtn.addEventListener('click',function(){
+            showMenu.classList.toggle('hidden')
+            main.classList.toggle('block')
+        })
+
+        const profileBtn = document.querySelector('.profileBtn')
+        const webMenu = document.querySelector('.webMenu')
+        profileBtn.addEventListener('click',function(){
+            webMenu.classList.toggle('hidden')
+            webNotif.classList.add('hidden')
+        })
+        const webNotifBtn = document.querySelector('.webNotifBtn')
+        const webNotif = document.querySelector('.webNotif')
+        webNotifBtn.addEventListener('click',function(){
+            webNotif.classList.toggle('hidden')
+            webMenu.classList.add('hidden')
+        })
+        const mobileNotifBtn = document.querySelector('.mobileNotifBtn')
+        mobileNotifBtn.addEventListener('click',function(){
+            webNotif.classList.toggle('hidden')
+        })
+        const webSearchBtn = document.querySelector('.webSearchBtn')
+        webSearchBtn.addEventListener('click',function(){
+            modal.classList.remove('hidden')
+        })
+
+        const buttons = document.querySelectorAll("[data-carousel-button]")
+
+        buttons.forEach(button => {
+        button.addEventListener("click", () => {
+            const offset = button.dataset.carouselButton === "next" ? 1 : -1
+            const slides = button
+            .closest("[data-carousel]")
+            .querySelector("[data-slides]")
+
+            const activeSlide = slides.querySelector("[data-active]")
+            let newIndex = [...slides.children].indexOf(activeSlide) + offset
+            if (newIndex < 0) newIndex = slides.children.length - 1
+            if (newIndex >= slides.children.length) newIndex = 0
+
+            slides.children[newIndex].dataset.active = true
+            delete activeSlide.dataset.active
+        })
+        })
+        const imgBtn = document.querySelector('.imgBtn')
+        const showImg = document.querySelector('.showImg')
+        const container = document.querySelector('.container')
+
+        imgBtn.addEventListener('click',function(){
+            showImg.classList.remove('hidden')
+            container.classList.add('hidden')
+        })
+        const closeBtn = document.querySelector('.closeBtn')
+        closeBtn.addEventListener('click',function(){
+            showImg.classList.add('hidden')
+            container.classList.remove('hidden')
+        })
+        const viewBidBtn = document.querySelector('.viewBidBtn')
+        const viewBid = document.querySelector('.viewBid')
+
+        viewBidBtn.addEventListener('click',function(){
+            viewBid.classList.remove('hidden')
+        })
+        const bidCloseBtn = document.querySelector('.bidCloseBtn')
+        bidCloseBtn.addEventListener('click',function(){
+            viewBid.classList.add('hidden')
+        })
+        const bidBtn = document.querySelector('.bidBtn')
+        const bidSummary = document.querySelector('.bidSummary')
+        
+        bidBtn.addEventListener('click',function(){
+            bidSummary.classList.remove('hidden')
+        })
+        const noBtn = document.querySelector('.noBtn')
+            noBtn.addEventListener('click',function(){
+                bidSummary.classList.add('hidden')
+            })
+        const yesBtn = document.querySelector('.yesBtn')
+        const successBid = document.querySelector('.successBid')
+        const closeSummary = document.querySelector('.closeSummary')
+            yesBtn.addEventListener('click',function(){
+            successBid.classList.remove('hidden')
+            yesBtn.classList.add('hidden')
+            noBtn.classList.add('hidden')
+            closeSummary.classList.remove('hidden')
+
+        })
+        closeSummary.addEventListener('click',function(){
+            bidSummary.classList.add('hidden')
+        })
+    </script>
+</body>
+</html>
