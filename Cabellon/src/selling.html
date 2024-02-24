@@ -31,7 +31,7 @@
         <header class="header bg-gray-100 px-2 w-full">
             <nav class="nav flex justify-between items-center">
                 <div>
-                    <a href="home.html"><img class="w-95 h-16" src="img/logos.png" alt="logo"></a>
+                    <img class="w-95 h-10" src="img/logos.png" alt="logo">
                 </div>
                 <div class="flex items-center gap-4 md:hidden">
                     <button class="showModal fa fa-search cursor-pointer bg-gray-100 border-gray-100 hover:border-gray-200 hover:bg-gray-200 p-2 rounded-full"style="font-size: 18px;"></button>
@@ -139,8 +139,8 @@
 
            <nav class="flex justify-center">
             <ul class="flex md:gap-40 gap-10 font-bold">
-                <li class="hover:text-orange-500"><a href="home.html">HOME</a></li>
-                <li class="hover:text-orange-500"><a class="text-orange-500" href="#" href="selling.html">SELL</a></li>
+                <li class="hover:text-orange-500"><a >HOME</a></li>
+                <li class="hover:text-orange-500"><a class="text-orange-500" href="#" href="#">SELL</a></li>
                 <li class="hover:text-orange-500"><a href="#">AUCTION</a></li>
             </ul>
            </nav>
@@ -226,11 +226,14 @@
                     <input type="radio"><span class="ml-2">Gcash</span>
                     <input type="radio"><span class="ml-2">Meet-up</span>
                     <br>
-                    <div class="flex md:flex-row flex-col gap-2">
-                        <input class="rounded-md pl-2 border-2 border-gray-400"type="text" placeholder="Date-end">
-                        <input class="rounded-md pl-2 border-2 border-gray-400"type="text" placeholder="Time-end">
-                        <select class="rounded-md pl-2 border-2 border-gray-400"name="auctionitem" id="auctionitem">
+                    <div class="flex flex-col gap-2">
+                        <p class="font-bold">Date end:</p>
+                        <input class="rounded-md pl-2 border-2 border-gray-400 w-36"type="date" placeholder="Date-end">
+                        <p class="font-bold">Time end:</p>
+                        <input class="rounded-md pl-2 border-2 border-gray-400 w-36"type="time" placeholder="Time-end">
+                        <select class="rounded-md pl-2 border-2 border-gray-400 w-44"name="auctionitem" id="auctionitem">
                         <option hidden>Select an option</option>
+                        <option value="">None</option>
                         <option value="">Collectible Item</option>
                         <option value="">With Academic Value</option>
                         </select>
