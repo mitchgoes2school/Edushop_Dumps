@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--Style-->
+    <link rel="stylesheet" href="output.css">
+    <!--ICONS-->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,500,0,0" />
+    <!--Fonts-->
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Lexend Tera' rel='stylesheet'>
+    <!--EDUSHOP FONTS-->
+    <style>
+        body{
+            font-family: 'Poppins';
+        }
+        h2{
+            font-family:'Lexend Tera';
+        }
+    </style>
+</head>
+<body>
+    <!--whole-container-->
+    <div class="relative">
+        <!--Header-->
+        <header class="header bg-gray-100 px-2 w-full">
+            <nav class="nav flex justify-between items-center">
+                <div>
+                    <img class="w-95 h-10" src="img/logos.png" alt="logo">
+                </div>
+                <div class="flex items-center gap-4 md:hidden">
+                    <button class="showModal fa fa-search cursor-pointer bg-gray-100 border-gray-100 hover:border-gray-200 hover:bg-gray-200 p-2 rounded-full"style="font-size: 18px;"></button>
+                    <button class="mobileNotifBtn fa fa-bell border-2 bg-gray-100 border-gray-100 hover:border-gray-200 hover:bg-gray-200 p-2 rounded-full" style="font-size: 18px; color: transparent; -webkit-text-stroke: 2px black;"></button>
+                    <ion-icon class="menuBtn mr-2 text-3xl cursor-pointer bg-gray-100 border-gray-100 hover:border-gray-200 hover:bg-gray-200 p-1 rounded-full"name="menu-outline"></ion-icon>
+                </div>
+                <div class="nav-links text-xs md:static md:min-h-fit absolute bg-gray-100 min-h-[13vh] left-0 md:w-auto w-full flex items-center px-5 top-[-100%]">
+                    <ul class="flex md:flex-row flex-col md:items-center md:gap-2 gap-1 text-center">
+                        <li class="hover:text-orange-500"><a class="cursor-pointer">Help</a></li>
+                        <span class="hidden md:block">|</span>
+                        <li class="webNotifBtn hover:text-orange-500"><a class="cursor-pointer"><i class="fa fa-bell"></i></a></li>
+                        <span class="hidden md:block">|</span>
+                        <li class="profileBtn hover:text-orange-500"><a class="cursor-pointer">Ralph</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <!--Notification-->
+            <div class="webNotif bg-gray-100 w-52 h-auto absolute right-1 rounded-md px-4 py-2 hidden">
+                <div class="bg-transparent hover:bg-gray-300 px-2 rounded-md">
+                    <a class="text-xs" href="#"><span class="font-bold">Borgard</span> sent you an offer</a>
+                </div>
+                <div class="bg-transparent hover:bg-gray-300 px-2 rounded-md">
+                    <a class="text-xs" href="#"><span class="font-bold">Borgard</span> sent you an offer</a>
+                </div>
+                <div class="bg-transparent hover:bg-gray-300 px-2 rounded-md">
+                    <a class="text-xs" href="#"><span class="font-bold">Borgard</span> sent you an offer</a>
+                </div>
+            </div>
+            <!--Profile Menu-->
+            <div class="webMenu px-4 py-2 bg-gray-100 w-52 h-auto absolute right-1 rounded-md hidden">
+                <div class="bg-transparent hover:bg-gray-300 px-2 rounded-md">
+                    <a class="text-sm" href="#"><span class="mr-2 mt-2"><ion-icon name="person-circle-outline"></ion-icon></span>My profile</a>
+                </div>
+                <div class="bg-transparent hover:bg-gray-300 px-2 rounded-md">
+                    <a class="text-sm" href="#"><span class="mr-2 mt-2"><ion-icon name="list-circle-outline"></ion-icon></span>Listing</a>
+                </div>
+                <div class="bg-transparent hover:bg-gray-300 px-2 rounded-md">
+                    <a class="text-sm" href="#"><span class="mr-2 mt-2"><ion-icon name="eye-outline"></ion-icon></span>Watchlist</a>
+                </div>
+                <div class="bg-transparent hover:bg-gray-300 px-2 rounded-md">
+                    <a class="text-sm" href="#"><span class="mr-2 mt-2"><ion-icon name="log-in-outline"></ion-icon></span>Logout</a>
+                </div>
+            </div>
+            <!--Search Modal-->
+            <div class="modal h-screen w-[%100] ml-10 mr-10 pt-5 hidden">
+                <button class="cancelBtn font-bold ml-3 mr-5 md:mr-10  hover:text-gray-400 absolute md:right-5 right-0">Cancel</button>
+                <center>
+                    <input class="w-[70%] md:w-96 rounded-full pl-2 border-2 border-gray-400" type="text" name="s" id="s" placeholder="Search">
+                    <br><br>
+                    <span class="text-gray-500">Popular Search Items</span>
+                </center>
+               
+                
+                
+            </div>
+            <div class="showMenu h-screen w-full hidden">
+                <div class="px-5 pt-5 ">
+                    <h1 class="font-bold">Menu</h1>
+                </div>
+                <div class="px-5 flex border-b-2 border-gray-400">
+                    <div>
+                        <img src="img/profile.jpg" alt="profile" class="w-10 h-10 rounded-full mt-2">
+                    </div>
+                    <div class="mb-5">
+                        <p class="mx-2 mt-2 text-xs font-bold">Ralph Evan D. Cabellon</p>
+                        <a class="mx-2 text-xs text-blue-700 underline" href="#">Edit Profile</a>  
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 sm:grid-cols-3 px-5 py-3 gap-2 border-b-2">
+                    <div class="border-2 border-white rounded-md w-40 h-20 bg-white text-center justify-center pt-2 shadow-lg drop-shadow-lg">
+                        <a class="font-bold"href="#">Listing</a><br>
+                        <span><i class="fa fa-address-book-o"></i></span>
+                    </div>
+                    <div class="border-2 border-white rounded-md w-40 h-20 bg-white text-center justify-center pt-2 shadow-lg drop-shadow-lg">
+                        <a class="font-bold"href="#">Favorites</a><br>
+                        <span><i class="fa fa-heart"></i></span>
+                    </div>
+                    <div class="border-2 border-white rounded-md w-40 h-20 bg-white text-center justify-center pt-2 shadow-lg drop-shadow-lg">
+                        <a class="font-bold"href="#">Watchist</a><br>
+                        <span><i class="fa fa-eye"></i></span>
+                    </div>
+                    <div class="border-2 border-white rounded-md w-40 h-20 bg-white text-center justify-center pt-2 shadow-lg drop-shadow-lg">
+                        <a class="font-bold"href="#">Listing</a>
+                    </div>
+                    <div class="border-2 border-white rounded-md w-40 h-20 bg-white text-center justify-center pt-2 shadow-lg drop-shadow-lg">
+                        <a class="font-bold"href="#">Listing</a>
+                    </div>
+                    <div class="border-2 border-white rounded-md w-40 h-20 bg-white text-center justify-center pt-2 shadow-lg drop-shadow-lg">
+                        <a class="font-bold"href="#">Listing</a>
+                    </div>
+                </div>
+                <div class="mt-5">
+                    <button class="w-full border-2 border-gray-600 bg-gray-600 text-white rounded-xl font-bold cursor-pointer">Logout</button>
+                </div>
+                
+
+            </div>
+        </header>
+
+        <!--Menu Option-->
+        <div class="text-center font-bold text-3xl py-2">
+            <h2>EDUSHOP</h2>
+        </div>
+        <div class="py-2" >
+
+           <nav class="flex justify-center">
+            <ul class="flex md:gap-40 gap-10 font-bold">
+                <li class="hover:text-orange-500"><a class="text-orange-500" href="#">HOME</a></li>
+                <li class="hover:text-orange-500"><a href="#">SELL</a></li>
+                <li class="hover:text-orange-500"><a href="#">AUCTION</a></li>
+            </ul>
+           </nav>
+           <style>
+           </style>
+            <div class="hidden md:block float-end mr-4">
+                <button class="webSearchBtn border-2 border-gray-500 p-1 w-36 rounded-full font-bold text-gray-400 bg-transparent hover:bg-gray-100 hover:text-gray-800 hover:border-gray-800"><span class="fa fa-search mr-1"></span>Search</button>
+                <button class="fa fa-heart mr-4 border-2 bg-white border-white hover:border-gray-200 hover:bg-gray-200 p-2 rounded-full" style="font-size: 20px; color: transparent; -webkit-text-stroke: 2px black;"></button>
+            </div>
+        </div>
+
+        <!--Main-->
+        <br><br>
+        
+        <div class="main md:ml-32 md:mr-32 ml-5 mr-5">
+            <div class="py-3">
+                <h3 class="font-bold text-black">My Profile</h3>
+            </div>
+            <div class="border-t-2 border-gray-500">
+                <center>
+                    <div class="py-2 relative w-32 h-32">
+                        <img class="profilePic w-32 h-32 rounded-full border-2 border-gray-500 " src="img/profile.jpg" alt="profile">
+                        <label for="inputFile" class="fa fa-camera cursor-pointer absolute text-gray-100 bg-gray-500 p-2 rounded-full" style="bottom:0; right:5px;font-size: 15px;"></label>
+                        <input type="file" id="inputFile" class="inputFile hidden" accept="image/png, image/jpeg, image/jpg">
+                       
+                    </div>
+                </center>
+                <div class="flex justify-center my-3 py-2">
+                    <p class="font-bold">Ralph Evan D. Cabellon</p>
+                </div>
+                <div class="bg-gray-200 rounded-md">
+                    <ul class="flex justify-center md:justify-start lg:justify-start sm:justify-center gap-5 font-semibold text-sm">
+                        <li class="about hover:bg-gray-400 rounded-md cursor-pointer px-3 py-2 bg-gray-400 ">About</li>
+                        <li class="listing hover:bg-gray-400 rounded-md cursor-pointer px-3 py-2">Listing</li>
+                        <li class="feedback hover:bg-gray-400 rounded-md cursor-pointer px-3 py-2">Feedback</li>
+                    </ul>
+                </div>
+                    <!--Edit Profile-->
+                    <div class="editProfileDetails bg-gray-200 w-auto md:w-96 lg:w-96 sm:w-96 py-2 mt-3 px-3 shadow-lg drop-shadow-lg rounded-md hidden">
+                        <button class="closeEditProfileDetails text-sm hover:bg-gray-400 rounded-full py-1 px-2">&#10006;</button>
+                        <div class="flex justify-between px-3  py-1 border-b  border-gray-400 text-sm">
+                            <p>Name</p>
+                            <span class="nameBtn cursor-pointer hover:text-orange-500">&#10095;</span>
+                        </div>
+                        <div class="flex justify-between px-3 py-1 border-b border-gray-400 text-sm">
+                            <p>Address</p>
+                            <span class="addressBtn cursor-pointer hover:text-orange-500">&#10095;</span>
+                        </div>
+                        <div class="flex justify-between px-3 py-1 border-b border-gray-400 text-sm">
+                            <p>Mobile Number</p>
+                            <span class="cursor-pointer hover:text-orange-500">&#10095;</span>
+                        </div>
+                        <div class="flex justify-between px-3 py-1 border-b border-gray-400 text-sm">
+                            <p>Email</p>
+                            <span class="cursor-pointer hover:text-orange-500">&#10095;</span>
+                        </div>
+                        <div class="flex justify-between px-3 py-1 border- border-gray-400 text-sm">
+                            <p>Password</p>
+                            <span class="cursor-pointer hover:text-orange-500">&#10095;</span>
+                    </div>
+            </div>
+            <!--Show Details-->
+            <div class="profileDetails bg-gray-200 w-auto md:w-96 lg:w-96 sm:w-96 py-2 mt-3 px-3 shadow-lg drop-shadow-lg rounded-md">
+                <p class="text-sm">
+                    <span class="fa fa-home mr-2" style="font-size: 22px;"></span>Bulacao Cebu City
+                </p>
+                <p class="text-sm">
+                    <span class="fa fa-envelope mr-2" style="font-size: 16px;"></span>ralphevanschool@gmail.com
+                </p>
+                <p class="text-sm">
+                    <span class="fa fa-check-circle mr-2 text-blue-500" style="font-size: 20px;"></span>Verified Top Notcher
+                </p>
+                <button class="editProfileBtn w-full bg-blue-500 text-white font-bold rounded-md mt-3 hover:bg-blue-700">Edit Profile</button>
+            </div>
+        </div>
+        <!--try if col is working-->
+        
+        <!--footer-->
+        <div class="bg-gray-100 h-16 mt-5">
+
+        </div>
+        <!--EDIT NAME-->
+        <div class="editName w-full h-full bg-gray-400 bg-opacity-50 absolute top-2/4 left-2/4 hidden" style="transform: translate(-50%,-50%);">
+            <div class="bg-gray-100 pt-2 pb-8 px-5 rounded-md shadow-lg drop-shadow-lg md:w-96 sm:w-96 lg:w-96 w-full absolute top-2/4 left-2/4" style="transform: translate(-50%,-50%);">
+                <button class="nameClose float-end py-1 px-2 hover:bg-gray-400 rounded-full">&#10006;</button>
+                <h3 class="font-bold mb-5 mt-5">Name</h3>
+                <p class="text-sm font-semibold">First name</p>
+                <input type="text" class="border-2 border-gray-500 rounded-md text-sm px-2 py-1 w-full">
+                <p class="text-sm font-semibold mt-2">Middle name</p>
+                <input type="text" class="border-2 border-gray-500 rounded-md text-sm px-2 py-1 w-full">
+                <p class="text-sm font-semibold mt-2">Last name</p>
+                <input type="text" class="border-2 border-gray-500 rounded-md text-sm px-2 py-1 w-full">
+                <button class="changeBtn shadow-lg drop-shadow-lg bg-orange-500 text-white font-bold px-3 py-1 float-end mt-5 rounded-lg hover:bg-orange-700">Change</button>
+            </div>
+            <div class="messageName w-fit h-fit bg-gray-100 absolute top-1/3 left-2/4 px-3 py-2 border-2 border-gray-500 rounded-md hidden" style="transform: translate(-50%,-50%);">
+                <p class="pName">Are you sure you want to change it?</p>
+                <center>
+                    <div class="nameSuccessMsg hidden">
+                        <button class="float-end nameSuccessBtn px-2 py-1 hover:bg-gray-400 rounded-full">&#10006;</button><br>
+                        <span class="fa fa-check-circle text-green-500" style="font-size: 30px;"></span>
+                        <p class="text-sm">Change Successfully</p>
+                    </div>
+                </center>
+                
+                <div class="nameBtns flex justify-center gap-1 mt-2">
+                    <button class="noName bg-red-500 shadow-lg drop-shadow-lg py-1 px-2 text-white font-bold rounded-md w-20 hover:bg-red-700">No</button>
+                    <button class="yesName bg-green-500 shadow-lg drop-shadow-lg py-1 px-2 text-white font-bold rounded-md w-20 hover:bg-green-700">Yes</button>
+                </div>
+                
+            </div>
+        </div>
+
+        <!--EDIT ADDRESS-->
+        <div class="editAddress w-full h-full bg-gray-400 bg-opacity-50 absolute top-2/4 left-2/4 hidden" style="transform: translate(-50%,-50%);">
+            <div class="bg-gray-100 pt-2 pb-8 px-5 rounded-md shadow-lg drop-shadow-lg md:w-96 sm:w-96 lg:w-96 w-full absolute top-2/4 left-2/4" style="transform: translate(-50%,-50%);">
+                <button class="addressClose float-end py-1 px-2 hover:bg-gray-400 rounded-full">&#10006;</button>
+                <h3 class="mb-5 mt-5 font-bold">Address</h3>
+                <input type="text" class="border-2 border-gray-500 rounded-md text-sm px-2 py-1 w-full">
+                <button class="addressChangeBtn shadow-lg drop-shadow-lg bg-orange-500 text-white font-bold px-3 py-1 float-end mt-5 rounded-lg hover:bg-orange-700">Change</button>
+            </div>
+            <div class="messageAddress w-fit h-fit bg-gray-100 absolute top-1/3 left-2/4 px-3 py-2 border-2 border-gray-500 rounded-md hidden" style="transform: translate(-50%,-50%);">
+                <p class="pAddress">Are you sure you want to change it?</p>
+                <center>
+                    <div class="addressSuccessMsg hidden">
+                        <button class="float-end addressSuccessBtn px-2 py-1 hover:bg-gray-400 rounded-full">&#10006;</button><br>
+                        <span class="fa fa-check-circle text-green-500 ml-6" style="font-size: 30px;"></span>
+                        <p class="text-sm">Change Successfully</p>
+                    </div>
+                </center>
+                
+                <div class="addressBtns flex justify-center gap-1 mt-2">
+                    <button class="noAddress bg-red-500 shadow-lg drop-shadow-lg py-1 px-2 text-white font-bold rounded-md w-20 hover:bg-red-700">No</button>
+                    <button class="yesAddress bg-green-500 shadow-lg drop-shadow-lg py-1 px-2 text-white font-bold rounded-md w-20 hover:bg-green-700">Yes</button>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+    
+        
+    <!--JavaScripts-->
+    <script>
+        /**const navLinks = document.querySelector('.nav-links')
+        function menu(e){
+            e.name = e.name === 'menu' ? 'close' : 'menu'
+            navLinks.classList.toggle('top-[8%]')
+        }*/
+        
+        const nav = document.querySelector('.nav')
+        const modal = document.querySelector('.modal')
+        const showModal = document.querySelector('.showModal')
+        const menuBtn = document.querySelector('.menuBtn')
+        const showMenu = document.querySelector('.showMenu')
+        const main = document.querySelector('.main')
+
+        showModal.addEventListener('click',function(){
+            nav.classList.add('hidden')
+            modal.classList.remove('hidden')
+        })
+        const cancelBtn = document.querySelector('.cancelBtn')
+        cancelBtn.addEventListener('click',function(){
+            nav.classList.remove('hidden')
+            modal.classList.add('hidden')
+            showMenu.classList.add('hidden')
+
+        })
+        
+        menuBtn.addEventListener('click',function(){
+            showMenu.classList.toggle('hidden')
+            main.classList.toggle('block')
+        })
+
+        const profileBtn = document.querySelector('.profileBtn')
+        const webMenu = document.querySelector('.webMenu')
+        profileBtn.addEventListener('click',function(){
+            webMenu.classList.toggle('hidden')
+            webNotif.classList.add('hidden')
+        })
+        const webNotifBtn = document.querySelector('.webNotifBtn')
+        const webNotif = document.querySelector('.webNotif')
+        webNotifBtn.addEventListener('click',function(){
+            webNotif.classList.toggle('hidden')
+            webMenu.classList.add('hidden')
+        })
+        const mobileNotifBtn = document.querySelector('.mobileNotifBtn')
+        mobileNotifBtn.addEventListener('click',function(){
+            webNotif.classList.toggle('hidden')
+        })
+        const webSearchBtn = document.querySelector('.webSearchBtn')
+        webSearchBtn.addEventListener('click',function(){
+            modal.classList.remove('hidden')
+        })
+        const nameBtn = document.querySelector('.nameBtn')
+        const editName = document.querySelector('.editName')
+
+        nameBtn.addEventListener('click',function(){
+            editName.classList.remove('hidden')
+        })
+        const nameClose = document.querySelector('.nameClose')
+        nameClose.addEventListener('click',function(){
+            editName.classList.add('hidden')
+        })
+        const editProfileBtn = document.querySelector('.editProfileBtn')
+        const editProfileDetails = document.querySelector('.editProfileDetails')
+        const profileDetails = document.querySelector('.profileDetails')
+        editProfileBtn.addEventListener('click',function(){
+            editProfileDetails.classList.remove('hidden')
+            profileDetails.classList.add('hidden')
+
+        })
+        const changeBtn = document.querySelector('.changeBtn')
+        const messageName = document.querySelector('.messageName')
+        changeBtn.addEventListener('click',function(){
+            messageName.classList.remove('hidden')
+        })
+        const noName = document.querySelector('.noName')
+        noName.addEventListener('click',function(){
+            messageName.classList.add('hidden')
+        })
+        const yesName = document.querySelector('.yesName')
+        const nameSuccessMsg = document.querySelector('.nameSuccessMsg')
+        const pName = document.querySelector('.pName')
+        const nameBtns = document.querySelector('.nameBtns')
+
+        yesName.addEventListener('click',function(){
+            nameSuccessMsg.classList.remove('hidden')
+            pName.classList.add('hidden')
+            nameBtns.classList.add('hidden')
+        })
+        const nameSuccessBtn = document.querySelector('.nameSuccessBtn')
+        nameSuccessBtn.addEventListener('click',function(){
+            editName.classList.add('hidden')
+            messageName.classList.add('hidden')
+        })
+        const closeEditProfileDetails = document.querySelector('.closeEditProfileDetails')
+        closeEditProfileDetails.addEventListener('click',function(){
+            editProfileDetails.classList.add('hidden')
+            profileDetails.classList.remove('hidden')
+        })
+        /*EDIT ADDRESS*/
+        const addressBtn = document.querySelector('.addressBtn')
+        const editAddress = document.querySelector('.editAddress')
+        addressBtn.addEventListener('click',function(){
+            editAddress.classList.remove('hidden')
+        })
+        const profilePic = document.querySelector('.profilePic')
+        const inputFile = document.querySelector('.inputFile')
+        inputFile.onchange = function(){
+            profilePic.src = URL.createObjectURL(inputFile.files[0])
+        }
+        const addressChangeBtn = document.querySelector('.addressChangeBtn')
+        const messageAddress = document.querySelector('.messageAddress')
+        addressChangeBtn.addEventListener('click',function(){
+            messageAddress.classList.remove('hidden')
+        })
+        const noAddress = document.querySelector('.noAddress')
+        noAddress.addEventListener('click',function(){
+            messageAddress.classList.add('hidden')
+        })
+        const addressClose = document.querySelector('.addressClose')
+        addressClose.addEventListener('click',function(){
+            editAddress.classList.add('hidden')
+        })
+        const yesAddress = document.querySelector('.yesAddress')
+        const addressSuccessMsg = document.querySelector('.addressSuccessMsg')
+        const pAddress = document.querySelector('.pAddress')
+        const addressBtns = document.querySelector('.addressBtns') 
+        yesAddress.addEventListener('click',function(){
+            addressSuccessMsg.classList.remove('hidden')
+            pAddress.classList.add('hidden')
+            addressBtns.classList.add('hidden')
+        })
+        const addressSuccessBtn = document.querySelector('.addressSuccessBtn')
+        addressSuccessBtn.addEventListener('click',function(){
+            editAddress.classList.add('hidden')
+            messageAddress.classList.add('hidden')
+        })
+        /*Mobile Edit*/
+    </script>
+</body>
+</html>
