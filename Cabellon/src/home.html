@@ -30,7 +30,7 @@
         <header class="header bg-gray-100 px-2 w-full">
             <nav class="nav flex justify-between items-center">
                 <div>
-                    <a href="home.html"><img class="w-95 h-16" src="img/logos.png" alt="logo"></a>
+                    <img class="w-95 h-10" src="img/logos.png" alt="logo">
                 </div>
                 <div class="flex items-center gap-4 md:hidden">
                     <button class="showModal fa fa-search cursor-pointer bg-gray-100 border-gray-100 hover:border-gray-200 hover:bg-gray-200 p-2 rounded-full"style="font-size: 18px;"></button>
@@ -92,7 +92,7 @@
                 </div>
                 <div class="px-5 flex border-b-2 border-gray-400">
                     <div>
-                        <img src="img/profile.png" alt="profile" class="w-10 h-10 rounded-full mt-2">
+                        <img src="img/profile.jpg" alt="profile" class="w-10 h-10 rounded-full mt-2">
                     </div>
                     <div class="mb-5">
                         <p class="mx-2 mt-2 text-xs font-bold">Ralph Evan D. Cabellon</p>
@@ -138,8 +138,8 @@
 
            <nav class="flex justify-center">
             <ul class="flex md:gap-40 gap-10 font-bold">
-                <li class="hover:text-orange-500"><a class="text-orange-500" href="home.html">HOME</a></li>
-                <li class="hover:text-orange-500"><a href="selling.html">SELL</a></li>
+                <li class="hover:text-orange-500"><a class="text-orange-500" href="#">HOME</a></li>
+                <li class="hover:text-orange-500"><a href="#">SELL</a></li>
                 <li class="hover:text-orange-500"><a href="#">AUCTION</a></li>
             </ul>
            </nav>
@@ -155,89 +155,46 @@
         <br><br>
         
         <div class="main md:ml-32 md:mr-32 ml-5 mr-5">
-            <div class="py-3">
-                <h3 class="font-bold text-black">Todays Pick</h3>
+            <div class="todaysPick">
+                <div class="py-3">
+                    <h3 class="font-bold text-black">Todays Pick</h3>
+                </div>
+                <center>
+                <div class="grid grid-cols-3 md:grid-cols-6 border-t-2 gap-2 sm:gap-5 md:gap-10 border-gray-500 pt-5">
+                    <div class="pb-5">
+                        <div class="">
+                            <img class="md:w-36 md:h-36 sm:w-32 sm:h-32 w-28 h-28 border-2 border-gray-100"src="img/laptop.png" alt="laptop">
+                        </div>
+                        <div class="flex flex-col ml-2 text-xs">
+                            <span>Item Name</span>
+                            <span>Description</span>
+                            <span class="font-bold">Price</span>
+                        </div>
+                    </div>
+                </div>
+                </center>
             </div>
-            <center>
-            <div class="grid grid-cols-3 md:grid-cols-6 border-t-2 gap-2 sm:gap-5 md:gap-10 border-gray-500 pt-5">
-                <div class="pb-5">
-                    <div class="">
-                        <img class="md:w-36 md:h-36 sm:w-32 sm:h-32 w-28 h-28 border-2 border-gray-100"src="img/laptop.png" alt="laptop">
-                    </div>
-                    <div class="flex flex-col ml-2 text-xs">
-                        <span>Item Name</span>
-                        <span>Description</span>
-                        <span class="font-bold">Price</span>
+            <div class="Donated">
+                <div class="py-3">
+                    <h3 class="font-bold text-black">Donated Items</h3>
+                </div>
+                <center>
+                <div class="grid grid-cols-3 md:grid-cols-6 border-t-2 gap-2 sm:gap-5 md:gap-10 border-gray-500 pt-5">
+                    <div class="pb-5">
+                        <div class="">
+                            <img class="md:w-36 md:h-36 sm:w-32 sm:h-32 w-28 h-28 border-2 border-gray-100"src="img/laptop.png" alt="laptop">
+                        </div>
+                        <div class="flex flex-col ml-2 text-xs">
+                            <span>Item Name</span>
+                            <span>Description</span>
+                            <span class="font-bold">Price</span>
+                        </div>
                     </div>
                 </div>
-                <!--2nd col-->
-                <div>
-                    <div class="">
-                        <img class="md:w-36 md:h-36 sm:w-32 sm:h-32 w-28 h-28 border-2 border-gray-100"src="img/laptop.png" alt="laptop">
-                    </div>
-                    <div class="flex flex-col ml-2 text-xs">
-                        <span>Item Name</span>
-                        <span>Description</span>
-                        <span class="font-bold">Price</span>
-                    </div>
-                </div>
-                <!--3rd col-->
-                <div>
-                    <div class="">
-                        <img class="md:w-36 md:h-36 sm:w-32 sm:h-32 w-28 h-28 border-2 border-gray-100"src="img/laptop.png" alt="laptop">
-                    </div>
-                    <div class="flex flex-col ml-2 text-xs">
-                        <span>Item Name</span>
-                        <span>Description</span>
-                        <span class="font-bold">Price</span>
-                    </div>
-                </div>
-                <!--4th col-->
-                <div>
-                    <div class="">
-                        <img class="md:w-36 md:h-36 sm:w-32 sm:h-32 w-28 h-28 border-2 border-gray-100"src="img/laptop.png" alt="laptop">
-                    </div>
-                    <div class="flex flex-col ml-2 text-xs">
-                        <span>Item Name</span>
-                        <span>Description</span>
-                        <span class="font-bold">Price</span>
-                    </div>
-                </div>
-                <!--5th-->
-                <div>
-                    <div class="">
-                        <img class="md:w-36 md:h-36 sm:w-32 sm:h-32 w-28 h-28 border-2 border-gray-100"src="img/laptop.png" alt="laptop">
-                    </div>
-                    <div class="flex flex-col ml-2 text-xs">
-                        <span>Item Name</span>
-                        <span>Description</span>
-                        <span class="font-bold">Price</span>
-                    </div>
-                </div>
-                <!--6th-->
-                <div>
-                    <div class="">
-                        <img class="md:w-36 md:h-36 sm:w-32 sm:h-32 w-28 h-28 border-2 border-gray-100"src="img/laptop.png" alt="laptop">
-                    </div>
-                    <div class="flex flex-col ml-2 text-xs">
-                        <span>Item Name</span>
-                        <span>Description</span>
-                        <span class="font-bold">Price</span>
-                    </div>
-                </div>
-                <!--try if col is working-->
-                <div>
-                    <div class="">
-                        <img class="md:w-36 md:h-36 sm:w-32 sm:h-32 w-28 h-28 border-2 border-gray-100"src="img/laptop.png" alt="laptop">
-                    </div>
-                    <div class="flex flex-col ml-2 text-xs">
-                        <span>Item Name</span>
-                        <span>Description</span>
-                        <span class="font-bold">Price</span>
-                    </div>
-                </div>
+                </center>
             </div>
-        </center>
+            
+        
         </div>
     
         <!--try if col is working-->
