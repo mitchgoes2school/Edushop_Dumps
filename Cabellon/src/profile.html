@@ -174,7 +174,7 @@
                 </div>
                 <div class="bg-gray-200 rounded-md">
                     <ul class="flex justify-center md:justify-start lg:justify-start sm:justify-center gap-5 font-semibold text-sm">
-                        <li class="about hover:bg-gray-400 rounded-md cursor-pointer px-3 py-2 bg-gray-400 ">About</li>
+                        <li class="about hover:bg-gray-400 rounded-md cursor-pointer px-3 py-2">About</li>
                         <li class="listing hover:bg-gray-400 rounded-md cursor-pointer px-3 py-2">Listing</li>
                         <li class="feedback hover:bg-gray-400 rounded-md cursor-pointer px-3 py-2">Feedback</li>
                     </ul>
@@ -183,26 +183,26 @@
                     <div class="editProfileDetails bg-gray-200 w-auto md:w-96 lg:w-96 sm:w-96 py-2 mt-3 px-3 shadow-lg drop-shadow-lg rounded-md hidden">
                         <button class="closeEditProfileDetails text-sm hover:bg-gray-400 rounded-full py-1 px-2">&#10006;</button>
                         <div class="flex justify-between px-3  py-1 border-b  border-gray-400 text-sm">
-                            <p>Name</p>
-                            <span class="nameBtn cursor-pointer hover:text-orange-500">&#10095;</span>
+                            <p>Ralph Evan D. Cabellon</p>
+                            <span class="nameBtn cursor-pointer text-blue-500 underline hover:text-blue-700">Edit</span>
                         </div>
                         <div class="flex justify-between px-3 py-1 border-b border-gray-400 text-sm">
-                            <p>Address</p>
-                            <span class="addressBtn cursor-pointer hover:text-orange-500">&#10095;</span>
+                            <p>Bulacao Cebu City</p>
+                            <span class="addressBtn cursor-pointer text-blue-500 underline hover:text-blue-700">Edit</span>
                         </div>
                         <div class="flex justify-between px-3 py-1 border-b border-gray-400 text-sm">
-                            <p>Mobile Number</p>
-                            <span class="cursor-pointer hover:text-orange-500">&#10095;</span>
+                            <p>09298898789</p>
+                            <span class="mobileBtn cursor-pointer text-blue-500 underline hover:text-blue-700">Edit</span>
                         </div>
                         <div class="flex justify-between px-3 py-1 border-b border-gray-400 text-sm">
-                            <p>Email</p>
-                            <span class="cursor-pointer hover:text-orange-500">&#10095;</span>
+                            <p>ralphevanschool@gmail.com</p>
+                            <span class="emailBtn cursor-pointer text-blue-500 underline hover:text-blue-700">Edit</span>
                         </div>
                         <div class="flex justify-between px-3 py-1 border- border-gray-400 text-sm">
                             <p>Password</p>
-                            <span class="cursor-pointer hover:text-orange-500">&#10095;</span>
+                            <span class="passwordBtn cursor-pointer hover:text-orange-500">&#10095;</span>
+                        </div>
                     </div>
-            </div>
             <!--Show Details-->
             <div class="profileDetails bg-gray-200 w-auto md:w-96 lg:w-96 sm:w-96 py-2 mt-3 px-3 shadow-lg drop-shadow-lg rounded-md">
                 <p class="text-sm">
@@ -215,6 +215,48 @@
                     <span class="fa fa-check-circle mr-2 text-blue-500" style="font-size: 20px;"></span>Verified Top Notcher
                 </p>
                 <button class="editProfileBtn w-full bg-blue-500 text-white font-bold rounded-md mt-3 hover:bg-blue-700">Edit Profile</button>
+            </div>
+            <!--Show Listing-->
+            <div class="showListing my-3 px-10 grid md:grid-cols-2 lg:grid-cols-2 grid-cols-1 gap-2">
+                <div class="w-fit h-fit bg-gray-200 p-2 rounded-md shadow-lg drop-shadow-lg pr-5">
+                    <div class="flex">
+                        <div class="">
+                            <img src="img/laptop.png" alt="" class="w-20 h-20 md:w-28 md:h-28 my-2 md:mx-5 border-2 border-gray-300">
+                        </div>
+                        <div class="text-xs md:text-sm font-bold ml-1 mt-2">
+                            <p>HP Laptop</p>
+                            <p><span class="">₱</span>10,000.00</p>
+                            <p class="text-xs">1pc.</p>
+                            <br>
+                            <p class="editlist font-normal text-blue-500 underline cursor-pointer">Edit</p>
+                        </div>
+                        <div class="flex flex-col ml-5 md:ml-20">
+                            <button class="text-xs md:text-base border-2 border-orange-500 px-2 py-1 rounded-2xl bg-orange-500 text-white font-bold shadow-lg drop-shadow-lg mb-2 mt-5 hover:bg-orange-700 hover:border-orange-700">Boost</button>
+                            <button class="text-xs md:text-base border-red-500 text-red-500 font-bold rounded-2xl border-2 px-2 py-1 drop-shadow-lg shadow-lg mt-1 hover:bg-red-500 hover:border-red-500 hover:text-white">Remove</button>
+                            <button></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-fit h-fit bg-gray-200 p-2 rounded-md shadow-lg drop-shadow-lg pr-5">
+                    <div class="flex">
+                        <div class="">
+                            <img src="img/laptop.png" alt="" class="w-20 h-20 md:w-28 md:h-28 my-2 md:mx-5 border-2 border-gray-300">
+                        </div>
+                        <div class="text-xs md:text-sm font-bold ml-1 mt-2">
+                            <p>HP Laptop</p>
+                            <p><span class="">₱</span>10,000.00</p>
+                            <p class="text-xs">1pc.</p>
+                            <br>
+                            <p class="font-normal text-blue-500 underline cursor-pointer">Edit</p>
+                        </div>
+                        <div class="flex flex-col ml-5 md:ml-20">
+                            <button class="text-xs md:text-base border-2 border-orange-500 px-2 py-1 rounded-md bg-orange-500 text-white font-bold shadow-lg drop-shadow-lg mb-2 mt-5 hover:bg-orange-700 hover:border-orange-700">Boost</button>
+                            <button class="text-xs md:text-base border-red-500 text-red-500 font-bold rounded-2xl border-2 px-2 py-1 drop-shadow-lg shadow-lg mt-1 hover:bg-red-500 hover:border-red-500 hover:text-white">Remove</button>
+                            <button></button>
+                        </div>
+                    </div>
+                </div>
+               
             </div>
         </div>
         <!--try if col is working-->
@@ -238,13 +280,13 @@
             </div>
             <div class="messageName w-fit h-fit bg-gray-100 absolute top-1/3 left-2/4 px-3 py-2 border-2 border-gray-500 rounded-md hidden" style="transform: translate(-50%,-50%);">
                 <p class="pName">Are you sure you want to change it?</p>
-                <center>
                     <div class="nameSuccessMsg hidden">
                         <button class="float-end nameSuccessBtn px-2 py-1 hover:bg-gray-400 rounded-full">&#10006;</button><br>
-                        <span class="fa fa-check-circle text-green-500" style="font-size: 30px;"></span>
-                        <p class="text-sm">Change Successfully</p>
+                        <div class="flex flex-col justify-center items-center">
+                            <span class="fa fa-check-circle text-green-500 ml-6" style="font-size: 40px;"></span>
+                        </div>
+                        <p class="text-sm font-bold">Change Successfully</p>
                     </div>
-                </center>
                 
                 <div class="nameBtns flex justify-center gap-1 mt-2">
                     <button class="noName bg-red-500 shadow-lg drop-shadow-lg py-1 px-2 text-white font-bold rounded-md w-20 hover:bg-red-700">No</button>
@@ -264,13 +306,13 @@
             </div>
             <div class="messageAddress w-fit h-fit bg-gray-100 absolute top-1/3 left-2/4 px-3 py-2 border-2 border-gray-500 rounded-md hidden" style="transform: translate(-50%,-50%);">
                 <p class="pAddress">Are you sure you want to change it?</p>
-                <center>
                     <div class="addressSuccessMsg hidden">
                         <button class="float-end addressSuccessBtn px-2 py-1 hover:bg-gray-400 rounded-full">&#10006;</button><br>
-                        <span class="fa fa-check-circle text-green-500 ml-6" style="font-size: 30px;"></span>
-                        <p class="text-sm">Change Successfully</p>
+                        <div class="flex flex-col justify-center items-center">
+                            <span class="fa fa-check-circle text-green-500 ml-6" style="font-size: 40px;"></span>
+                        </div>
+                        <p class="text-sm font-bold">Change Successfully</p>
                     </div>
-                </center>
                 
                 <div class="addressBtns flex justify-center gap-1 mt-2">
                     <button class="noAddress bg-red-500 shadow-lg drop-shadow-lg py-1 px-2 text-white font-bold rounded-md w-20 hover:bg-red-700">No</button>
@@ -279,7 +321,95 @@
                 
             </div>
         </div>
-        
+        <!--Edit Mobile No.-->
+        <div class="editMobile w-full h-full bg-gray-400 bg-opacity-50 absolute top-2/4 left-2/4 hidden" style="transform: translate(-50%,-50%);">
+            <div class="bg-gray-100 pt-2 pb-8 px-5 rounded-md shadow-lg drop-shadow-lg md:w-96 sm:w-96 lg:w-96 w-full absolute top-2/4 left-2/4" style="transform: translate(-50%,-50%);">
+                <button class="mobileClose float-end py-1 px-2 hover:bg-gray-400 rounded-full">&#10006;</button>
+                <h3 class="mb-5 mt-5 font-bold">Mobile Number</h3>
+                <input type="text" class="border-2 border-gray-500 rounded-md text-sm px-2 py-1 w-full">
+                <button class="mobileChangeBtn shadow-lg drop-shadow-lg bg-orange-500 text-white font-bold px-3 py-1 float-end mt-5 rounded-lg hover:bg-orange-700">Change</button>
+            </div>
+            <div class="messageMobile w-fit h-fit bg-gray-100 absolute top-1/3 left-2/4 px-3 py-2 border-2 border-gray-500 rounded-md hidden" style="transform: translate(-50%,-50%);">
+                <p class="pMobile">Are you sure you want to change it?</p>
+                    <div class="mobileSuccessMsg hidden">
+                        <button class="float-end mobileSuccessBtn px-2 py-1 hover:bg-gray-400 rounded-full">&#10006;</button><br>
+                        <div class="flex flex-col justify-center items-center">
+                            <span class="fa fa-check-circle text-green-500 ml-6" style="font-size: 40px;"></span>
+                        </div>
+                        <p class="text-sm font-bold">Change Successfully</p>
+                    </div>
+                <div class="mobileBtns flex justify-center gap-1 mt-2">
+                    <button class="noMobile bg-red-500 shadow-lg drop-shadow-lg py-1 px-2 text-white font-bold rounded-md w-20 hover:bg-red-700">No</button>
+                    <button class="yesMobile bg-green-500 shadow-lg drop-shadow-lg py-1 px-2 text-white font-bold rounded-md w-20 hover:bg-green-700">Yes</button>
+                </div>
+                
+            </div>
+        </div>
+        <!--EDIT EMAIL-->
+        <div class="editEmail w-full h-full bg-gray-400 bg-opacity-50 absolute top-2/4 left-2/4 hidden" style="transform: translate(-50%,-50%);">
+            <div class="bg-gray-100 pt-2 pb-8 px-5 rounded-md shadow-lg drop-shadow-lg md:w-96 sm:w-96 lg:w-96 w-full absolute top-2/4 left-2/4" style="transform: translate(-50%,-50%);">
+                <button class="emailClose float-end py-1 px-2 hover:bg-gray-400 rounded-full">&#10006;</button>
+                <h3 class="mb-5 mt-5 font-bold">Email Address</h3>
+                <input type="text" class="border-2 border-gray-500 rounded-md text-sm px-2 py-1 w-full">
+                <button class="emailChangeBtn shadow-lg drop-shadow-lg bg-orange-500 text-white font-bold px-3 py-1 float-end mt-5 rounded-lg hover:bg-orange-700">Change</button>
+            </div>
+            <div class="messageEmail w-fit h-fit bg-gray-100 absolute top-1/3 left-2/4 px-3 py-2 border-2 border-gray-500 rounded-md hidden" style="transform: translate(-50%,-50%);">
+                <p class="pEmail">Are you sure you want to change it?</p>
+                    <div class="emailSuccessMsg hidden">
+                        <button class="float-end emailSuccessBtn px-2 py-1 hover:bg-gray-400 rounded-full">&#10006;</button><br>
+                        <div class="flex flex-col justify-center items-center">
+                            <span class="fa fa-check-circle text-green-500 ml-6" style="font-size: 40px;"></span>
+                        </div>
+                        <p class="text-sm font-bold">Change Successfully</p>
+                    </div>
+                <div class="emailBtns flex justify-center gap-1 mt-2">
+                    <button class="noEmail bg-red-500 shadow-lg drop-shadow-lg py-1 px-2 text-white font-bold rounded-md w-20 hover:bg-red-700">No</button>
+                    <button class="yesEmail bg-green-500 shadow-lg drop-shadow-lg py-1 px-2 text-white font-bold rounded-md w-20 hover:bg-green-700">Yes</button>
+                </div>
+                
+            </div>
+        </div>
+        <!--Edit Password-->
+        <div class="editPassword w-full h-full bg-gray-400 bg-opacity-50 absolute top-2/4 left-2/4 hidden" style="transform: translate(-50%,-50%);">
+            <div class="bg-gray-100 pt-2 pb-8 px-5 rounded-md shadow-lg drop-shadow-lg md:w-96 sm:w-96 lg:w-96 w-full absolute top-2/4 left-2/4" style="transform: translate(-50%,-50%);">
+                <button class="passwordClose float-end py-1 px-2 hover:bg-gray-400 rounded-full">&#10006;</button>
+                <h3 class="font-bold mb-5 mt-5">Change Password</h3>
+                <p class="text-sm font-semibold">Current Password</p>
+                <input type="password" class="border-2 border-gray-500 rounded-md text-sm px-2 py-1 w-full">
+                <p class="text-sm font-semibold mt-2">New Password</p>
+                <input type="password" class="border-2 border-gray-500 rounded-md text-sm px-2 py-1 w-full">
+                <p class="text-sm font-semibold mt-2">Confirm Password</p>
+                <input type="password" class="border-2 border-gray-500 rounded-md text-sm px-2 py-1 w-full">
+                <button class="passwordChangeBtn shadow-lg drop-shadow-lg bg-orange-500 text-white font-bold px-3 py-1 float-end mt-5 rounded-lg hover:bg-orange-700">Change</button>
+            </div>
+            <div class="messagePassword w-fit h-fit bg-gray-100 absolute top-1/3 left-2/4 px-3 py-2 border-2 border-gray-500 rounded-md hidden" style="transform: translate(-50%,-50%);">
+                <p class="pPassword">Are you sure you want to change it?</p>
+                    <div class="passwordSuccessMsg hidden">
+                        <button class="float-end passwordSuccessBtn px-2 py-1 hover:bg-gray-400 rounded-full">&#10006;</button><br>
+                        <div class="flex flex-col justify-center items-center">
+                            <span class="fa fa-check-circle text-green-500 ml-6" style="font-size: 40px;"></span>
+                        </div>
+                        <p class="text-sm font-bold">Change Successfully</p>
+                    </div>
+                
+                <div class="passwordBtns flex justify-center gap-1 mt-2">
+                    <button class="noPassword bg-red-500 shadow-lg drop-shadow-lg py-1 px-2 text-white font-bold rounded-md w-20 hover:bg-red-700">No</button>
+                    <button class="yesPassword bg-green-500 shadow-lg drop-shadow-lg py-1 px-2 text-white font-bold rounded-md w-20 hover:bg-green-700">Yes</button>
+                </div>
+                
+            </div>
+        </div>
+        <!--Edit List-->
+        <div class="editList w-full h-full bg-gray-400 bg-opacity-50 absolute top-2/4 left-2/4" style="transform: translate(-50%,-50%);">
+            <div class="bg-gray-100 pt-2 pb-8 px-5 rounded-md shadow-lg drop-shadow-lg  w-full absolute top-2/4 left-2/4 md:w-1/2 lg:w-1/2" style="transform: translate(-50%,-50%);">
+                <button class="closeList float-end py-1 px-2 hover:bg-gray-400 rounded-full">&#10006;</button>
+                <h3 class="font-bold mb-5 mt-5">Edit List</h3>
+                <div class="flex justify-center">
+                    <img src="img/laptop.png" alt="" class="md:w-40 md:h-40 lg:w-40 lg:h-40">
+                </div>
+
+            </div>
+        </div>
     </div>
     
         
@@ -321,6 +451,12 @@
             webMenu.classList.toggle('hidden')
             webNotif.classList.add('hidden')
         })
+        /*profile pic*/
+        const profilePic = document.querySelector('.profilePic')
+        const inputFile = document.querySelector('.inputFile')
+        inputFile.onchange = function(){
+            profilePic.src = URL.createObjectURL(inputFile.files[0])
+        }
         const webNotifBtn = document.querySelector('.webNotifBtn')
         const webNotif = document.querySelector('.webNotif')
         webNotifBtn.addEventListener('click',function(){
@@ -388,11 +524,7 @@
         addressBtn.addEventListener('click',function(){
             editAddress.classList.remove('hidden')
         })
-        const profilePic = document.querySelector('.profilePic')
-        const inputFile = document.querySelector('.inputFile')
-        inputFile.onchange = function(){
-            profilePic.src = URL.createObjectURL(inputFile.files[0])
-        }
+        
         const addressChangeBtn = document.querySelector('.addressChangeBtn')
         const messageAddress = document.querySelector('.messageAddress')
         addressChangeBtn.addEventListener('click',function(){
@@ -421,6 +553,120 @@
             messageAddress.classList.add('hidden')
         })
         /*Mobile Edit*/
+        const mobileBtn = document.querySelector('.mobileBtn')
+        const editMobile = document.querySelector('.editMobile')
+        mobileBtn.addEventListener('click',function(){
+            editMobile.classList.remove('hidden')
+        })
+        
+        const mobileChangeBtn = document.querySelector('.mobileChangeBtn')
+        const messageMobile = document.querySelector('.messageMobile')
+        mobileChangeBtn.addEventListener('click',function(){
+            messageMobile.classList.remove('hidden')
+        })
+        const noMobile = document.querySelector('.noMobile')
+        noMobile.addEventListener('click',function(){
+            messageMobile.classList.add('hidden')
+        })
+        const mobileClose = document.querySelector('.mobileClose')
+        mobileClose.addEventListener('click',function(){
+            editMobile.classList.add('hidden')
+        })
+        const yesMobile = document.querySelector('.yesMobile')
+        const mobileSuccessMsg = document.querySelector('.mobileSuccessMsg')
+        const pMobile = document.querySelector('.pMobile')
+        const mobileBtns = document.querySelector('.mobileBtns') 
+        yesMobile.addEventListener('click',function(){
+            mobileSuccessMsg.classList.remove('hidden')
+            pMobile.classList.add('hidden')
+            mobileBtns.classList.add('hidden')
+        })
+        const mobileSuccessBtn = document.querySelector('.mobileSuccessBtn')
+        mobileSuccessBtn.addEventListener('click',function(){
+            editMobile.classList.add('hidden')
+            messageMobile.classList.add('hidden')
+        })
+        /*Edit Email*/
+        const emailBtn = document.querySelector('.emailBtn')
+        const editEmail = document.querySelector('.editEmail')
+        emailBtn.addEventListener('click',function(){
+            editEmail.classList.remove('hidden')
+        })
+        
+        const emailChangeBtn = document.querySelector('.emailChangeBtn')
+        const messageEmail = document.querySelector('.messageEmail')
+        emailChangeBtn.addEventListener('click',function(){
+            messageEmail.classList.remove('hidden')
+        })
+        const noEmail = document.querySelector('.noEmail')
+        noEmail.addEventListener('click',function(){
+            messageEmail.classList.add('hidden')
+        })
+        const emailClose = document.querySelector('.emailClose')
+        emailClose.addEventListener('click',function(){
+            editEmail.classList.add('hidden')
+        })
+        const yesEmail = document.querySelector('.yesEmail')
+        const emailSuccessMsg = document.querySelector('.emailSuccessMsg')
+        const pEmail = document.querySelector('.pEmail')
+        const emailBtns = document.querySelector('.emailBtns') 
+        yesEmail.addEventListener('click',function(){
+            emailSuccessMsg.classList.remove('hidden')
+            pEmail.classList.add('hidden')
+            emailBtns.classList.add('hidden')
+        })
+        const emailSuccessBtn = document.querySelector('.emailSuccessBtn')
+        emailSuccessBtn.addEventListener('click',function(){
+            editEmail.classList.add('hidden')
+            messageEmail.classList.add('hidden')
+        })
+        /*EDIT PASSWORD*/
+        const passwordBtn = document.querySelector('.passwordBtn')
+        const editPassword = document.querySelector('.editPassword')
+        passwordBtn.addEventListener('click',function(){
+            editPassword.classList.remove('hidden')
+        })
+        
+        const passwordChangeBtn = document.querySelector('.passwordChangeBtn')
+        const messagePassword = document.querySelector('.messagePassword')
+        passwordChangeBtn.addEventListener('click',function(){
+            messagePassword.classList.remove('hidden')
+        })
+        const noPassword = document.querySelector('.noPassword')
+        noPassword.addEventListener('click',function(){
+            messagePassword.classList.add('hidden')
+        })
+        const passwordClose = document.querySelector('.passwordClose')
+        passwordClose.addEventListener('click',function(){
+            editPassword.classList.add('hidden')
+        })
+        const yesPassword = document.querySelector('.yesPassword')
+        const passwordSuccessMsg = document.querySelector('.passwordSuccessMsg')
+        const pPassword = document.querySelector('.pPassword')
+        const passwordBtns = document.querySelector('.passwordBtns') 
+        yesPassword.addEventListener('click',function(){
+            passwordSuccessMsg.classList.remove('hidden')
+            pPassword.classList.add('hidden')
+            passwordBtns.classList.add('hidden')
+        })
+        const passwordSuccessBtn = document.querySelector('.passwordSuccessBtn')
+        passwordSuccessBtn.addEventListener('click',function(){
+            editPassword.classList.add('hidden')
+            messagePassword.classList.add('hidden')
+        })
+
+        /*Listing*/
+        const listing = document.querySelector('.listing')
+        const showListing = document.querySelector('.showListing')
+        listing.addEventListener('click',function(){
+            showListing.classList.remove('hidden')
+            profileDetails.classList.add('hidden')
+        })
+        const about = document.querySelector('.about')
+        about.addEventListener('click',function(){
+            showListing.classList.add('hidden')
+            profileDetails.classList.remove('hidden')
+        })
     </script>
 </body>
 </html>
