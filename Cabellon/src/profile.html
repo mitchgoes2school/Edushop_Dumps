@@ -217,46 +217,91 @@
                 <button class="editProfileBtn w-full bg-blue-500 text-white font-bold rounded-md mt-3 hover:bg-blue-700">Edit Profile</button>
             </div>
             <!--Show Listing-->
-            <div class="showListing my-3 px-10 grid md:grid-cols-2 lg:grid-cols-2 grid-cols-1 gap-2 hidden">
-                <div class="w-fit h-fit bg-gray-200 p-2 rounded-md shadow-lg drop-shadow-lg pr-5">
-                    <div class="flex">
-                        <div class="">
-                            <img src="img/laptop.png" alt="" class="w-20 h-20 md:w-28 md:h-28 my-2 md:mx-5 border-2 border-gray-300">
+            <div class="showListing hidden mx-5">
+                <div class="flex justify-center mt-3">
+                    <button class="listSellBtn border-2 border-gray-500 rounded-l-3xl px-5 w-28 py-1 font-bold bg-gray-200 hover:bg-gray-500 hover:text-white">Sell</button>
+                    <button class="listAuctionBtn border-2 border-gray-500 rounded-r-3xl px-5 w-28 py-1 font-bold bg-gray-200 hover:bg-gray-500 hover:text-white">Auction</button>
+                </div>
+                <!--Sell-->
+                <div class="listSell my-3 px-10 grid md:grid-cols-2 lg:grid-cols-2 grid-cols-1 gap-1">
+                    <div class="w-fit h-fit bg-gray-200 p-2 rounded-md shadow-lg drop-shadow-lg pr-5">
+                        <div class="flex">
+                            <div class="">
+                                <img src="img/laptop.png" alt="" class="w-20 h-20 md:w-28 md:h-28 my-2 md:mx-5 border-2 border-gray-300">
+                            </div>
+                            <div class="text-xs md:text-sm font-bold ml-1 mt-2">
+                                <p>HP Laptop</p>
+                                <p><span class="">₱</span>10,000.00</p>
+                                <p class="text-xs">1pc.</p>
+                                <br>
+                                <p class="sellEditListBtn font-normal text-blue-500 underline cursor-pointer">Edit</p>
+                            </div>
+                            <div class="flex flex-col ml-5 md:ml-20">
+                                <button class="text-xs md:text-base border-2 border-orange-500 px-2 py-1 rounded-2xl bg-orange-500 text-white font-bold shadow-lg drop-shadow-lg mt-2 hover:bg-orange-700 hover:border-orange-700">Boost</button>
+                                <button class="text-xs md:text-base border-blue-500 text-white bg-blue-500 font-bold rounded-2xl border-2 px-2 py-1 drop-shadow-lg shadow-lg mt-1 hover:bg-blue-700 hover:border-blue-700 ">Auction</button>
+                                <button class="text-xs md:text-base border-red-500 text-red-500 font-bold rounded-2xl border-2 px-2 py-1 drop-shadow-lg shadow-lg mt-1 hover:bg-red-500 hover:border-red-500 hover:text-white">Remove</button>
+                                
+                            </div>
                         </div>
-                        <div class="text-xs md:text-sm font-bold ml-1 mt-2">
-                            <p>HP Laptop</p>
-                            <p><span class="">₱</span>10,000.00</p>
-                            <p class="text-xs">1pc.</p>
-                            <br>
-                            <p class="editlist font-normal text-blue-500 underline cursor-pointer">Edit</p>
+                    </div>
+                    <div class="w-fit h-fit bg-gray-200 p-2 rounded-md shadow-lg drop-shadow-lg pr-5">
+                        <div class="flex">
+                            <div class="">
+                                <img src="img/laptop.png" alt="" class="w-20 h-20 md:w-28 md:h-28 my-2 md:mx-5 border-2 border-gray-300">
+                            </div>
+                            <div class="text-xs md:text-sm font-bold ml-1 mt-2">
+                                <p>HP Laptop</p>
+                                <p><span class="">₱</span>10,000.00</p>
+                                <p class="text-xs">1pc.</p>
+                                <br>
+                                <p class="font-normal text-blue-500 underline cursor-pointer">Edit</p>
+                            </div>
+                            <div class="flex flex-col ml-5 md:ml-20">
+                                <button class="text-xs md:text-base border-2 border-orange-500 px-2 py-1 rounded-2xl bg-orange-500 text-white font-bold shadow-lg drop-shadow-lg mt-2 hover:bg-orange-700 hover:border-orange-700">Boost</button>
+                                <button class="text-xs md:text-base border-blue-500 text-white bg-blue-500 font-bold rounded-2xl border-2 px-2 py-1 drop-shadow-lg shadow-lg mt-1 hover:bg-blue-700 hover:border-blue-700 ">Auction</button>
+                                <button class="text-xs md:text-base border-red-500 text-red-500 font-bold rounded-2xl border-2 px-2 py-1 drop-shadow-lg shadow-lg mt-1 hover:bg-red-500 hover:border-red-500 hover:text-white">Remove</button>
+                            </div>
                         </div>
-                        <div class="flex flex-col ml-5 md:ml-20">
-                            <button class="text-xs md:text-base border-2 border-orange-500 px-2 py-1 rounded-2xl bg-orange-500 text-white font-bold shadow-lg drop-shadow-lg mb-2 mt-5 hover:bg-orange-700 hover:border-orange-700">Boost</button>
-                            <button class="text-xs md:text-base border-red-500 text-red-500 font-bold rounded-2xl border-2 px-2 py-1 drop-shadow-lg shadow-lg mt-1 hover:bg-red-500 hover:border-red-500 hover:text-white">Remove</button>
-                            <button></button>
+                    </div>
+                   
+                </div>
+                <!--Auction-->
+                <div class="listAuction my-3 px-10 grid md:grid-cols-2 lg:grid-cols-2 grid-cols-1 gap-1 hidden">
+                    <div class="w-fit h-fit bg-gray-200 p-2 rounded-md shadow-lg drop-shadow-lg pr-5">
+                        <div class="flex">
+                            <div class="">
+                                <img src="img/laptop.png" alt="" class="w-20 h-20 md:w-28 md:h-28 my-2 md:mx-5 border-2 border-gray-300">
+                            </div>
+                            <div class="text-xs md:text-sm font-bold ml-1 mt-2">
+                                <p>HP Laptop</p>
+                                <p><span class="">₱</span>10,000.00</p>
+                                <p class="text-xs">1pc.</p>
+                                <br>
+                                <p class="editlist font-normal text-blue-500 underline cursor-pointer">Edit</p>
+                            </div>
+                            <div class="flex flex-col ml-5 md:ml-20">
+                                <button class="text-xs md:text-base border-red-500 text-red-500 font-bold rounded-2xl border-2 px-2 py-1 drop-shadow-lg shadow-lg mt-1 hover:bg-red-500 hover:border-red-500 hover:text-white">Remove</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-fit h-fit bg-gray-200 p-2 rounded-md shadow-lg drop-shadow-lg pr-5">
+                        <div class="flex">
+                            <div class="">
+                                <img src="img/laptop.png" alt="" class="w-20 h-20 md:w-28 md:h-28 my-2 md:mx-5 border-2 border-gray-300">
+                            </div>
+                            <div class="text-xs md:text-sm font-bold ml-1 mt-2">
+                                <p>HP Laptop</p>
+                                <p><span class="">₱</span>10,000.00</p>
+                                <p class="text-xs">1pc.</p>
+                                <br>
+                                <p class="font-normal text-blue-500 underline cursor-pointer">Edit</p>
+                            </div>
+                            <div class="flex flex-col ml-5 md:ml-20">
+                                <button class="text-xs md:text-base border-red-500 text-red-500 font-bold rounded-2xl border-2 px-2 py-1 drop-shadow-lg shadow-lg mt-1 hover:bg-red-500 hover:border-red-500 hover:text-white">Remove</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="w-fit h-fit bg-gray-200 p-2 rounded-md shadow-lg drop-shadow-lg pr-5">
-                    <div class="flex">
-                        <div class="">
-                            <img src="img/laptop.png" alt="" class="w-20 h-20 md:w-28 md:h-28 my-2 md:mx-5 border-2 border-gray-300">
-                        </div>
-                        <div class="text-xs md:text-sm font-bold ml-1 mt-2">
-                            <p>HP Laptop</p>
-                            <p><span class="">₱</span>10,000.00</p>
-                            <p class="text-xs">1pc.</p>
-                            <br>
-                            <p class="font-normal text-blue-500 underline cursor-pointer">Edit</p>
-                        </div>
-                        <div class="flex flex-col ml-5 md:ml-20">
-                            <button class="text-xs md:text-base border-2 border-orange-500 px-2 py-1 rounded-md bg-orange-500 text-white font-bold shadow-lg drop-shadow-lg mb-2 mt-5 hover:bg-orange-700 hover:border-orange-700">Boost</button>
-                            <button class="text-xs md:text-base border-red-500 text-red-500 font-bold rounded-2xl border-2 px-2 py-1 drop-shadow-lg shadow-lg mt-1 hover:bg-red-500 hover:border-red-500 hover:text-white">Remove</button>
-                            <button></button>
-                        </div>
-                    </div>
-                </div>
-               
             </div>
         </div>
         <!--try if col is working-->
@@ -400,14 +445,52 @@
             </div>
         </div>
         <!--Edit List-->
-        <div class="editList w-full h-full bg-gray-400 bg-opacity-50 absolute top-2/4 left-2/4 hidden" style="transform: translate(-50%,-50%);">
-            <div class="bg-gray-100 pt-2 pb-8 px-5 rounded-md shadow-lg drop-shadow-lg  w-full absolute top-2/4 left-2/4 md:w-1/2 lg:w-1/2" style="transform: translate(-50%,-50%);">
-                <button class="closeList float-end py-1 px-2 hover:bg-gray-400 rounded-full">&#10006;</button>
+        <div class="sellEditList w-full h-full bg-gray-400 bg-opacity-50 absolute top-2/4 left-2/4 hidden " style="transform: translate(-50%,-50%);">
+            <div class="bg-gray-100 pt-2 pb-8 px-5 rounded-md shadow-lg drop-shadow-lg  w-full absolute top-2/4 left-2/4 md:w-fit lg:w-fit" style="transform: translate(-50%,-50%);">
+                <button class="closeListSell float-end py-1 px-2 hover:bg-gray-400 rounded-full">&#10006;</button>
                 <h3 class="font-bold mb-5 mt-5">Edit List</h3>
                 <div class="flex justify-center">
-                    <img src="img/laptop.png" alt="" class="md:w-40 md:h-40 lg:w-40 lg:h-40">
+                    <img src="img/laptop.png" alt="" class="w-28 h-28 md:w-40 md:h-40 lg:w-40 lg:h-40">
                 </div>
-
+                <div class="grid grid-cols-2 lg:grid-cols-3 md:grid-cols-3 gap-3 border-t border-gray-500 pt-2">
+                    <div>
+                        <p class="text-xs font-thin">Title</p>
+                        <input type="text" class="border-2 border-gray-500 rounded-md w-40 lg:w-40 md:w-40 text-sm pl-1">
+                    </div>
+                    <div>
+                        <p class="text-xs font-thin">Price</p>
+                        <input type="text" class="border-2 border-gray-500 rounded-md w-40 text-sm pl-1">
+                    </div>
+                    <div>
+                        <p class="text-xs font-thin">Quantity</p>
+                        <input type="number" class="border-2 border-gray-500 rounded-md w-40 text-sm pl-1">
+                    </div>
+                    <div>
+                        <p class="text-xs font-thin">Condition</p>
+                        <select class="border-2 border-gray-500 rounded-md w-40 text-sm">
+                            <option hidden>Condition</option>
+                            <option value="prelovedbnew">Preloved - Brand New</option>
+                            <option value="likenew">Used - Like New</option>
+                            <option value="good">Used - Good</option>
+                            <option value="fair">Used - Fair</option>
+                            </select>
+                    </div>
+                    <div>
+                        <p class="text-xs font-thin">Categories</p>
+                        <select class="border-2 border-gray-500 rounded-md w-40 text-sm">
+                        <option hidden>Categories</option>
+                        <option value="">Stationery</option>
+                        <option value="">Labaratory Equipments</option>
+                        <option value="">Books</option>
+                        <option value="">Clothing</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="mt-4">
+                    <p class="text-xs font-thin">Description</p>
+                    <textarea class="w-52 text-xs border-2 border-gray-500 px-2" rows="4" cols="30"></textarea>
+                </div>
+                <button class="bg-blue-500 px-3 py-1 rounded-md font-bold text-white float-end mt-2">Save</button>
             </div>
         </div>
     </div>
@@ -666,6 +749,28 @@
         about.addEventListener('click',function(){
             showListing.classList.add('hidden')
             profileDetails.classList.remove('hidden')
+        })
+        const listAuctionBtn = document.querySelector('.listAuctionBtn')
+        const listSellBtn = document.querySelector('.listSellBtn')
+        const listAuction = document.querySelector('.listAuction')
+        const listSell = document.querySelector('.listSell')
+
+        listAuctionBtn.addEventListener('click',function(){
+            listSell.classList.add('hidden')
+            listAuction.classList.remove('hidden')
+        })
+        listSellBtn.addEventListener('click',function(){
+            listSell.classList.remove('hidden')
+            listAuction.classList.add('hidden')
+        })
+        const sellEditListBtn = document.querySelector('.sellEditListBtn')
+        const sellEditList = document.querySelector('.sellEditList')
+        sellEditListBtn.addEventListener('click',function(){
+            sellEditList.classList.remove('hidden')
+        })
+        const closeListSell = document.querySelector('.closeListSell')
+        closeListSell.addEventListener('click',function(){
+            sellEditList.classList.add('hidden')
         })
     </script>
 </body>
