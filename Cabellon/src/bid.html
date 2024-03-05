@@ -51,7 +51,7 @@
 </head>
 <body>
     <!--whole-container-->
-    <div class="container w-full h-full">
+    <div class="containerClass w-full h-full relative">
         <!--Header-->
         <header class="header bg-gray-100 px-2 w-full">
             <nav class="nav flex justify-between items-center">
@@ -215,10 +215,12 @@
                             </div>
                         </div>
                         <p class="text-xs font-bold">Seller's Information</p>
+                        <button class="reportBtn float-end"><i class="fa fa-flag text-red-500 mr-2" style="font-size: 20px;"></i></button>
                         <p class="font-bold">Ralph Evan D. Cabellon</p>
                         <p class="text-xs">09298898789</p>
                         <p class="text-xs">Bulacao Cebu City</p>
                         <p class="font-bold"><span class="fa fa-check-circle text-blue-500 mr-1"></span>Top 1 board passer</p>
+                        
                     </div>
                     
                 </div>
@@ -270,6 +272,17 @@
         <!--footer-->
         <div class="bg-gray-100 h-16 mt-5">
 
+        </div>
+        <div class="reportDialog h-full w-full hidden bg-gray-500 bg-opacity-40 absolute top-2/4 left-2/4 " style="transform: translate(-50%,-50%);">
+            <div class=" bg-gray-100 h-fit w-fit px-5 pb-5 border-2 border-gray-400 drop-shadow-lg shadow-lg rounded-md absolute top-2/4 left-2/4" style="transform: translate(-50%,-50%);">
+            <button class="closeReport float-end text-base  px-3 py-1 text-gray-500 hover:bg-gray-200 rounded-full mt-2">&#10006;</button>
+            <div class="flex flex-col items-center justify-center mt-10 mb-3 mx-4">
+            <p class="text-base font-bold ">Why do you want to report this item?</p>
+            </div>
+            <input type="textarea" class="w-full h-20 p-2 border-gray-400 border-2 rounded-md">
+            <button class="bg-red-500 hover:bg-red-700 mt-2 py-1 px-3 text-white font-bold float-end rounded-md">Report</button>                     
+            </div>
+            
         </div>
     </div>
     <div class="showImg w-full h-screen bg-white p-5 flex justify-center items-center relative hidden">
@@ -364,16 +377,16 @@
         })
         const imgBtn = document.querySelector('.imgBtn')
         const showImg = document.querySelector('.showImg')
-        const container = document.querySelector('.container')
+        const containerClass = document.querySelector('.containerClass')
 
         imgBtn.addEventListener('click',function(){
             showImg.classList.remove('hidden')
-            container.classList.add('hidden')
+            containerClass.classList.add('hidden')
         })
         const closeBtn = document.querySelector('.closeBtn')
         closeBtn.addEventListener('click',function(){
             showImg.classList.add('hidden')
-            container.classList.remove('hidden')
+            containerClass.classList.remove('hidden')
         })
         const viewBidBtn = document.querySelector('.viewBidBtn')
         const viewBid = document.querySelector('.viewBid')
@@ -407,6 +420,15 @@
         })
         closeSummary.addEventListener('click',function(){
             bidSummary.classList.add('hidden')
+        })
+        const reportBtn = document.querySelector('.reportBtn')
+        const reportDialog = document.querySelector('.reportDialog')
+        reportBtn.addEventListener('click',function(){
+            reportDialog.classList.remove('hidden')
+        })
+        const closeReport =document.querySelector('.closeReport')
+        closeReport.addEventListener('click',function(){
+            reportDialog.classList.add('hidden')
         })
     </script>
 </body>
