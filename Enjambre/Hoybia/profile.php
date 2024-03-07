@@ -287,11 +287,6 @@ if (!$conn) {
                     <button class="listAuctionBtn border-2 border-gray-500 rounded-r-3xl px-5 w-28 py-1 font-bold bg-gray-200 hover:bg-gray-500 hover:text-white">Auction</button>
                 </div>
                 <!--Sell-->
-                <?php
-                if(isset($_POST['sellButton'])){
-                    echo "<script>alert('Hello')</script>";
-                }
-                ?>
                 <div class="listSell my-3 px-10 grid md:grid-cols-2 lg:grid-cols-2 grid-cols-1 gap-1">
                     <div class="w-fit h-fit bg-gray-200 p-2 rounded-md shadow-lg drop-shadow-lg pr-5">
                         <div class="flex">
