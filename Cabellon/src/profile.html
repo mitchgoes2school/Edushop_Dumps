@@ -23,6 +23,9 @@
         h2{
             font-family:'Lexend Tera';
         }
+        .checked{
+            color: orange;
+        }
     </style>
 </head>
 <body>
@@ -94,7 +97,7 @@
                 </div>
                 <div class="px-5 flex border-b-2 border-gray-400">
                     <div>
-                        <img src="img/profile.png" alt="profile" class="w-10 h-10 rounded-full mt-2">
+                        <img src="img/profile.jpg" alt="profile" class="w-10 h-10 rounded-full mt-2">
                     </div>
                     <div class="mb-5">
                         <p class="mx-2 mt-2 text-xs font-bold">Ralph Evan D. Cabellon</p>
@@ -163,7 +166,7 @@
             <div class="border-t-2 border-gray-500">
                 <center>
                     <div class="py-2 relative w-32 h-32">
-                        <img class="profilePic w-32 h-32 rounded-full border-2 border-gray-500 " src="img/profile.png" alt="profile">
+                        <img class="profilePic w-32 h-32 rounded-full border-2 border-gray-500 " src="img/profile.jpg" alt="profile">
                         <label for="inputFile" class="fa fa-camera cursor-pointer absolute text-gray-100 bg-gray-500 p-2 rounded-full" style="bottom:0; right:5px;font-size: 15px;"></label>
                         <input type="file" id="inputFile" class="inputFile hidden" accept="image/png, image/jpeg, image/jpg">
                        
@@ -175,8 +178,8 @@
                 <div class="bg-gray-200 rounded-md">
                     <ul class="flex justify-center md:justify-start lg:justify-start sm:justify-center gap-5 font-semibold text-sm">
                         <li class="about hover:bg-gray-400 rounded-md cursor-pointer px-3 py-2">About</li>
-                        <li class="listing hover:bg-gray-400 rounded-md cursor-pointer px-3 py-2">Listing</li>
-                        <li class="feedback hover:bg-gray-400 rounded-md cursor-pointer px-3 py-2">Feedback</li>
+                        <li class="listing hover:bg-gray-400 rounded-md cursor-pointer px-3 py-2">My Listing</li>
+                        <li class="feedback hover:bg-gray-400 rounded-md cursor-pointer px-3 py-2">Feedback & Rating</li>
                     </ul>
                 </div>
                     <!--Edit Profile-->
@@ -223,7 +226,7 @@
                     <button class="listAuctionBtn border-2 border-gray-500 rounded-r-3xl px-5 w-28 py-1 font-bold bg-gray-200 hover:bg-gray-500 hover:text-white">Auction</button>
                 </div>
                 <!--Sell-->
-                <div class="listSell my-3 px-10 grid md:grid-cols-2 lg:grid-cols-2 grid-cols-1 gap-1">
+                <div class="listSell my-3 px-10 grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 grid-cols-1 gap-1">
                     <div class="w-fit h-fit bg-gray-200 p-2 rounded-md shadow-lg drop-shadow-lg pr-5">
                         <div class="flex">
                             <div class="">
@@ -303,6 +306,43 @@
                     </div>
                 </div>
             </div>
+            <!--Feedback & Rating-->
+            <div class="showRating flex justify-center hidden">
+                <div class=" w-full lg:w-3/4 md:w-3/4 mx-5 bg-gray-200 h-fit my-3 rounded-md drop-shadow-lg shadow-lg px-3 py-2 grid grid-cols-1 md:grid-cols-2">
+                    <div>
+                        <p class="text-sm font-bold">Seller Ratings</p>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                    <div>
+                        <p class="text-sm font-bold">Seller Feedbacks<span>(1)</span></p>
+                        <div class="bg-gray-100 p-2 my-1 rounded-md border border-gray-300 shadow-lg drop-shadow-lg">
+                                <div  class="flex flex-col justify-center items-center">
+                                    <img src="img/profile.jpg" alt="" class="w-10 h-10 rounded-full">
+                                    <p class="text-xs mt-1 font-semibold">Jeff Labay</p>
+                                    <p class="text-xs text-gray-400">(<span>March 20, 2024</span>)</p>
+                                    <div>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>  
+                                    </div>
+                                    <div class="border border-gray-400 px-3 py-2 rounded-md">
+                                        <p class="text-xs">Dugay kay ka reply nya late pa gyud sa meet-up</p>
+                                    </div>
+                                    
+                                </div>
+                                
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
         </div>
         <!--try if col is working-->
         
@@ -744,11 +784,13 @@
         listing.addEventListener('click',function(){
             showListing.classList.remove('hidden')
             profileDetails.classList.add('hidden')
+            showRating.classList.add('hidden')
         })
         const about = document.querySelector('.about')
         about.addEventListener('click',function(){
             showListing.classList.add('hidden')
             profileDetails.classList.remove('hidden')
+            showRating.classList.add('hidden')
         })
         const listAuctionBtn = document.querySelector('.listAuctionBtn')
         const listSellBtn = document.querySelector('.listSellBtn')
@@ -771,6 +813,14 @@
         const closeListSell = document.querySelector('.closeListSell')
         closeListSell.addEventListener('click',function(){
             sellEditList.classList.add('hidden')
+        })
+        /*Rating*/
+        const showRating = document.querySelector('.showRating')
+        const feedback = document.querySelector('.feedback')
+        feedback.addEventListener('click',function(){
+            showRating.classList.remove('hidden')
+            showListing.classList.add('hidden')
+            profileDetails.classList.add('hidden')
         })
     </script>
 </body>
