@@ -1,0 +1,215 @@
+body{
+    font-family: 'Poppins';
+}
+.header{
+    background-color: #F0EDED;
+    overflow: auto;
+}
+.logo{
+    float: left;
+    width: 90px;
+    height: 35px;
+    padding: 3px;
+}
+.headeropt{
+    float: right;
+    font-size:13px;
+    font-family:'Poppins';
+    padding: 5px;
+    padding-top: 11px;
+    padding-right: 10px;
+
+}
+.title{
+    text-align: center;
+    font-family: 'Lexend Tera';
+    font-size: 30px;
+    font-weight:900;
+
+}
+a{
+    text-decoration: none;
+    color: #36454F;
+}
+a:hover{
+    color: #FC4F00;
+}
+.navcontainer{
+    display: flex;
+    justify-content: center;
+}
+ul{
+    text-align: center;
+    margin-left: 170px;
+}
+li{
+    display: inline-block;
+    margin-left: 90px;
+    margin-right: 30px;
+    font-family: 'Poppins';
+    font-weight: bold;
+}
+.search{
+    margin-right:  20px; /* Adjust as needed */
+    margin-left: 20px;
+    padding-top: 7px;
+    
+}
+.search input[type="search"]{
+    height: 20px;
+    width: 150px;
+    border-radius: 20px;
+    border: 2px solid #36454F;
+    margin-right: 5px;
+    padding: 12px 20px;
+    margin: 8px 0;
+}
+.search button{
+    color: #FC4F00;
+    height: 30px;
+    padding: 2px 10px;
+    border-radius: 20px;
+    border: 2px solid #ccc;
+    background-color: #F0EDED;
+    cursor: pointer;
+}
+.search button:hover{
+    color: #F0EDED;
+    background-color: #FC4F00;
+    border: 2px solid #f58753;
+}
+
+.bag{
+    
+    padding-top: 17px;
+}
+.bag a{
+    font-size: 20px;
+}
+.bag a:hover{
+    font-size: 25px;
+}
+main{
+    margin-left: 200px;
+    margin-right: 200px;
+}
+
+/* homepage */
+img{
+    width: 150px;
+    height: 200px;;
+}
+.item{
+    display: flex;
+    border-top: 1px solid black;
+}
+.marginitem{
+    margin-right: 20px;
+    padding-top: 10px;
+}
+.itemborder{
+    border: 2px solid #F0EDED;
+    width: 200;
+}
+.itemborder:hover{
+    border: 2px solid #FC4F00 ;
+}
+h3{
+    margin-bottom: 0px;
+}
+/* sell */
+.filecontainer{
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    cursor: pointer;
+    border: 2px solid #5a5b5b;
+    padding: 50px;
+    border-radius: 5px;
+    background-color: #F0EDED;
+    color: #5a5b5b;
+    width: 200px;
+    height: 100px;
+    
+}
+.filecontainer input[type="file"]{
+    position: absolute;
+    font-size: 100px;
+    opacity: 0;
+    right: 0;
+    top: 0;
+
+}
+.filecontainer i{
+    justify-content: center;
+    padding-top: 25px;
+    font-size: 40px;
+}
+
+.details{
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+.details input[type="text"]{
+    margin-right: 10px;
+    width: 200px;
+    height: 30px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    padding-left: 10px;
+}
+.select select{
+    margin-right: 10px;
+    width: 200px;
+    height: 30px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    padding-left: 10px;
+    border: 2px solid black;
+}
+.select{
+    display: flex;
+    flex-direction: row;
+}
+.firstadd{
+    border-top: 1px solid black;
+}
+.firstadd img{
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+}
+.firstadd span{
+    font-size: 13px;
+}
+.firstadd select{
+    width: 50px;
+    border-radius: 5px;
+}
+.secondadd{
+    border-top: 1px solid black;
+}
+.secondadd{
+    font-size:13px;
+}
+.secondadd input[type="text"]{
+    margin-right: 10px;
+    width: 200px;
+    height: 30px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    padding-left: 10px;
+}
+.secondadd select{
+    margin-right: 10px;
+    width: 200px;
+    height: 30px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    padding-left: 10px;
+    border: 2px solid black;
+}
+
+
