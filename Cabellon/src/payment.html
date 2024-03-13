@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Document</title>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <link rel="stylesheet" href="output.css">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Lexend Tera' rel='stylesheet'>
+    <!--EDUSHOP FONTS-->
+    <style>
+        body{
+            font-family: 'Poppins';
+        }
+        h2{
+            font-family:'Lexend Tera';
+        }
+    </style>
+</head>
+<body class="bg-orange-400">
+    <button class="text-white font-bold text-lg mx-5 mt-5">Back</button>
+    <div class="flex justify-center items-center">
+        <div class="bg-gray-50 w-3/4 md:w-1/2 lg:w-1/2 relative mt-24 h-[26rem] mb-5 rounded-xl border-2 border-gray-100 shadow-lg drop-shadow-lg">
+            <div class="w-24 h-24 md:w-32 md:h-32 lg:h-32 lg:w-32 bg-gray-50 absolute left-[50%] top-[%50] rounded-full border-2 border-gray-100 flex justify-center items-center" style="transform: translate(-50%,-50%);">
+                <img src="img/payment-method.png" alt="" class=" w-20 h-20 md:w-28 md:h-28">
+            </div>
+            <div class=" w-full h-20 mt-20">
+                <div class="flex mx-4 md:mx-20">
+                    <input type="radio" name="card" id="card">
+                    <p class="text-xs md:text-sm mx-2 font-bold">DEBIT CARD/CREDIT CARD</p>
+                    <input type="radio" name="gcash" id="gcash" class="ml-5">
+                    <p class="font-bold text-sm mx-2">GCASH</p>
+                </div>
+                <div class="py-6 px-5">
+                    <p class=" text-xs ml-3">CARD NUMBER</p>
+                    <input type="text" name="cardno" id="cardno" class="w-full md:w-80 h-9 rounded-xl border-2 border-orange-500 pl-2 text-sm">
+                    <p class="text-xs ml-3 mt-5 mb-3">EXPIRY DATE</p>
+                    <div class="flex gap-2">
+                        <select name="month" id="month" class="w-32 text-sm h-9 rounded-xl px-2 border-2 border-orange-500">
+                            <option value="0" hidden>Month</option>
+                            <option value="1">January</option>
+                            <option value="2">Febuary</option>
+                            <option value="3">March</option>
+                            <option value="4">April</option>
+                            <option value="5">May</option>
+                            <option value="6">June</option>
+                            <option value="7">July</option>
+                            <option value="8">August</option>
+                            <option value="9">September</option>
+                            <option value="10">October</option>
+                            <option value="11">November</option>
+                            <option value="12">December</option>
+                        </select>
+                        <input type="number" min="2024" max="2099" step="1" value="2024" class="w-32 h-9 rounded-xl px-2 border-2 border-orange-500">
+                    </div>
+                    <p class="text-xs ml-3 mt-5 mb-3">SECURITY CODE</p>
+                    <input type="text" name="" id="" class="w-40 h-9 rounded-xl px-2 border-2 border-orange-500">
+                    <div class="flex mt-5 gap-1 ">
+                        <button class="w-1/2 border-2 border-red-500 rounded-md font-bold text-red-500">CANCEL</button>
+                        <button class="w-1/2 border-2 border-orange-500 bg-orange-500 rounded-md text-white font-bold">PAY NOW</button>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    
+   
+</body>
+</html>
