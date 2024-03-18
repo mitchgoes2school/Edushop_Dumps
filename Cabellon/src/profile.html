@@ -176,10 +176,10 @@
                     <p class="font-bold">Ralph Evan D. Cabellon</p>
                 </div>
                 <div class="bg-gray-200 rounded-md">
-                    <ul class="flex justify-center md:justify-start lg:justify-start sm:justify-center gap-5 font-semibold text-sm">
-                        <li class="about hover:bg-gray-400 rounded-md cursor-pointer px-3 py-2">About</li>
-                        <li class="listing hover:bg-gray-400 rounded-md cursor-pointer px-3 py-2">My Listing</li>
-                        <li class="feedback hover:bg-gray-400 rounded-md cursor-pointer px-3 py-2">Feedback & Rating</li>
+                    <ul class="flex justify-center md:justify-start lg:justify-start sm:justify-center font-semibold text-sm">
+                        <li class="about bg-gray-400 hover:bg-gray-400 rounded-l-md cursor-pointer px-3 py-2 w-36 px-10">About</li>
+                        <li class="listing hover:bg-gray-400 cursor-pointer px-3 py-2 w-36">My Listing</li>
+                        <li class="feedback hover:bg-gray-400 cursor-pointer px-3 py-2 w-40">Feedback & Rating</li>
                     </ul>
                 </div>
                     <!--Edit Profile-->
@@ -222,7 +222,7 @@
             <!--Show Listing-->
             <div class="showListing hidden mx-5">
                 <div class="flex justify-center mt-3">
-                    <button class="listSellBtn border-2 border-gray-500 rounded-l-3xl px-5 w-28 py-1 font-bold bg-gray-200 hover:bg-gray-500 hover:text-white">Sell</button>
+                    <button class="listSellBtn border-2 border-gray-500 rounded-l-3xl px-5 w-28 py-1 font-bold  hover:bg-gray-500 bg-gray-500 hover:text-white text-white">Sell</button>
                     <button class="listAuctionBtn border-2 border-gray-500 rounded-r-3xl px-5 w-28 py-1 font-bold bg-gray-200 hover:bg-gray-500 hover:text-white">Auction</button>
                 </div>
                 <!--Sell-->
@@ -785,12 +785,18 @@
             showListing.classList.remove('hidden')
             profileDetails.classList.add('hidden')
             showRating.classList.add('hidden')
+            listing.classList.add('bg-gray-400')
+            about.classList.remove('bg-gray-400')
+            feedback.classList.remove('bg-gray-400')
         })
         const about = document.querySelector('.about')
         about.addEventListener('click',function(){
             showListing.classList.add('hidden')
             profileDetails.classList.remove('hidden')
             showRating.classList.add('hidden')
+            about.classList.add('bg-gray-400')
+            listing.classList.remove('bg-gray-400')
+            feedback.classList.remove('bg-gray-400')
         })
         const listAuctionBtn = document.querySelector('.listAuctionBtn')
         const listSellBtn = document.querySelector('.listSellBtn')
@@ -800,10 +806,23 @@
         listAuctionBtn.addEventListener('click',function(){
             listSell.classList.add('hidden')
             listAuction.classList.remove('hidden')
+            listAuctionBtn.classList.add('bg-gray-500')
+            listAuctionBtn.classList.add('text-white')
+            listSellBtn.classList.remove('bg-gray-500')
+            listSellBtn.classList.remove('text-white')
+            listSellBtn.classList.add('bg-gray-200')
+            listSellBtn.classList.add('text-black')
+          
         })
         listSellBtn.addEventListener('click',function(){
             listSell.classList.remove('hidden')
             listAuction.classList.add('hidden')
+            listSellBtn.classList.add('bg-gray-500')
+            listAuctionBtn.classList.remove('bg-gray-500')
+            listAuctionBtn.classList.remove('text-white')
+            listAuctionBtn.classList.add('bg-gray-200')
+            listSellBtn.classList.remove('text-black')
+            listSellBtn.classList.add('text-white')
         })
         const sellEditListBtn = document.querySelector('.sellEditListBtn')
         const sellEditList = document.querySelector('.sellEditList')
@@ -821,6 +840,9 @@
             showRating.classList.remove('hidden')
             showListing.classList.add('hidden')
             profileDetails.classList.add('hidden')
+            feedback.classList.add('bg-gray-400')
+            listing.classList.remove('bg-gray-400')
+            about.classList.remove('bg-gray-400')
         })
     </script>
 </body>
