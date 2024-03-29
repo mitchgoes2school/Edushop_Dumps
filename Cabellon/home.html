@@ -17,18 +17,18 @@
     <style>
         body{
             font-family: 'Poppins';
-            background-image: url('img/Edushop.png');
+            
         }
         h2{
             font-family:'Lexend Tera';
         }
     </style>
 </head>
-<body class="bg-orange-50">
+<body class="bg-green-100">
     <!--whole-container-->
-    <div class="relative">
+    <div class="relative w-full h-screen">
         <!--Header-->
-        <header class="header bg-orange-400 px-2 w-full">
+        <header class=" bg-green-900 px-2 w-full">
             <nav class="nav flex justify-between items-center">
                 <div>
                     <img class="w-30 h-14" src="img/Edushop.png" alt="logo">
@@ -38,13 +38,13 @@
                     <button class="mobileNotifBtn fa fa-bell border-2 bg-orange-400 border-orange-400 hover:border-orange-200 hover:bg-orange-200 p-2 rounded-full" style="font-size: 18px; color: transparent; -webkit-text-stroke: 2px white;"></button>
                     <ion-icon class="menuBtn mr-2 text-3xl cursor-pointer bg-orange-400 border-orange-100 hover:border-orange-200 hover:bg-orange-200 p-1 rounded-full"name="menu-outline"></ion-icon>
                 </div>
-                <div class="nav-links text-sm text-white md:static md:min-h-fit absolute bg-orange-400 min-h-[13vh] left-0 md:w-auto w-full flex items-center px-5 top-[-100%]">
+                <div class="nav-links text-base text-white md:static md:min-h-fit absolute bg-green-900 min-h-[13vh] left-0 md:w-auto w-full flex items-center px-5 top-[-100%]">
                     <ul class="flex md:flex-row flex-col md:items-center md:gap-2 gap-1 text-center">
-                        <li class="hover:text-orange-600"><a class="cursor-pointer">Help</a></li>
+                        <li class="hover:text-green-600"><a class="cursor-pointer">Help</a></li>
                         <span class="hidden md:block">|</span>
-                        <li class="webNotifBtn hover:text-orange-600"><a class="cursor-pointer"><i class="fa fa-bell"></i></a></li>
+                        <li class="webNotifBtn hover:text-green-600"><a class="cursor-pointer"><i class="fa fa-bell"></i></a></li>
                         <span class="hidden md:block">|</span>
-                        <li class="profileBtn hover:text-orange-600"><a class="cursor-pointer">Ralph</a></li>
+                        <li class="profileBtn hover:text-green-600"><a class="cursor-pointer">Ralph</a></li>
                     </ul>
                 </div>
             </nav>
@@ -76,8 +76,8 @@
                 </div>
             </div>
             <!--Search Modal-->
-            <div class="modal h-screen w-[%100] ml-10 mr-10 pt-5 hidden bg-orange-50 rounded-md">
-                <button class="cancelBtn font-bold ml-3 mr-5 md:mr-10  hover:text-gray-400 absolute md:right-10 right-0">Cancel</button>
+            <div class="modal h-screen w-[%100] ml-10 mr-10 pt-5 hidden bg-green-100 rounded-md relative">
+                <button class="cancelBtn font-bold hover:text-gray-400 absolute right-5 ">Cancel</button><br>
                 <center>
                     <input class="w-[70%] md:w-96 rounded-full pl-2 border-2 border-gray-400" type="text" name="s" id="s" placeholder="Search">
                     <br><br>
@@ -133,59 +133,78 @@
 
         <!--Menu Option-->
         <div class="mainContainer">
-            <div class="text-center font-bold text-3xl py-2 ">
-                <h2>EDUSHOP</h2>
-            </div>
-            <div class="py-2" >
-    
-               <nav class="flex justify-center">
-                <ul class="flex md:gap-40 gap-10 font-bold">
-                    <li class="hover:text-orange-500"><a class="" href="#">HOME</a></li>
-                    <li class="hover:text-orange-500 "><a href="#">SELL</a></li>
-                    <li class="hover:text-orange-500"><a href="#">AUCTION</a></li>
-                </ul>
-               </nav>
-               <style>
-               </style>
-                <div class="hidden md:block float-end mr-4">
-                    <button class="webSearchBtn border-2 border-black p-1 w-36 rounded-full font-bold text-black bg-transparent hover:bg-orange-100 hover:text-orange-400 hover:border-orange-400"><span class="fa fa-search mr-1"></span>Search</button>
-                    <button class="fa fa-heart mr-4 border-2 bg-orange-50 border-orange-50 hover:border-orange-200 hover:bg-orange-200 p-2 rounded-full" style="font-size: 20px; color: transparent; -webkit-text-stroke: 2px black;"></button>
+            <div class="subContainer">
+                <div class="text-center font-bold text-3xl py-2 ">
+                    <h2>EDUSHOP</h2>
+                </div>
+                <div class="py-2" >
+        
+                   <nav class="flex justify-center">
+                    <ul class="flex md:gap-40 gap-10 font-bold">
+                        <li class="hover:underline"><a class="" href="#">HOME</a></li>
+                        <li class="hover:underline"><a href="#">SELL</a></li>
+                        <li class="hover:underline"><a href="#">AUCTION</a></li>
+                    </ul>
+                   </nav>
+                   <style>
+                   </style>
+                    <div class="hidden md:block float-end mr-4">
+                        <button class="webSearchBtn border-2 border-black p-1 w-36 rounded-full font-bold text-black bg-white hover:text-green-400"><span class="fa fa-search mr-1"></span>Search</button>
+                        <button class="fa fa-heart mr-4 border-2 bg-green-100 border-green-100 hover:border-green-200 hover:bg-green-200 p-2 rounded-full" style="font-size: 20px; color: white; -webkit-text-stroke: 2px black;"></button>
+                    </div>
                 </div>
             </div>
+            
     
             <!--Main-->
-            <br><br><br>
-            <div class="w-full h-40 bg-orange-400 rounded-md">
-                <div class="grid md:grid-cols-6 lg:grid-cols-6 grid-cols-3 gap-0 pl-4">
-                    <div class=" w-fit h-fit py-4 md:py-2">
-                        <img src="img/laptop.png" alt="" class="md:w-36 md:h-36 w-32 h-32 bg-orange-100">
-                    </div>
-                    <div class=" w-fit h-fit md:py-2 py-4">
-                        <img src="img/laptop.png" alt="" class="md:w-36 md:h-36 w-32 h-32 bg-orange-100">
-                    </div>
-                    <div class=" w-fit h-fit md:py-2 py-4">
-                        <img src="img/laptop.png" alt="" class="md:w-36 md:h-36 w-32 h-32 bg-orange-100">
-                    </div>
-                    <div class=" w-fit h-fit py-2">
-                        <img src="img/laptop.png" alt="" class="w-36 h-36 bg-orange-100">
-                    </div>
-                    <div class=" w-fit h-fit py-2">
-                        <img src="img/laptop.png" alt="" class="w-36 h-36 bg-orange-100">
-                    </div>
-                    <div class=" w-fit h-fit py-2">
-                        <img src="img/laptop.png" alt="" class="w-36 h-36 bg-orange-100">
-                    </div>
-                </div>
-            </div>
+        
             <br>
             
-            <div class="main md:ml-32 md:mr-32 ml-5 mr-5">
+            <div class="main md:ml-32 md:mr-32 ml-5 mr-5 mb-5"><br>
+                <div class="w-full h-52 bg-gray-50 grid grid-cols-3">
+                    <div class="bg-black flex flex-col items-center">
+                        <img src="img/Edushop.png" alt="" class="w-24 h-16 mt-5">
+                        <p class="text-white font-bold text-xl" style="font-family: 'Lexend Tera';">Ralph<span>'s </span><br><span>Sulit Pickup Sale!!</span></p>
+                    </div>
+                   <div class="bg-black">
+                        <img src="img/laptop.png" alt="" class="w-52 h-52">
+                   </div>
+                   <div class="bg-white text-green-700 font-bold flex flex-row justify-center items-center">
+                    <div class="mx-4 text-2xl" style="font-family: 'Lexend Tera';">
+                        <p>HP Laptop</p>
+                        <p class="mb-3"><span>₱</span>20,000.00</p>
+                    </div>
+                </div>
+                </div>
                 <div class="todaysPick">
                     <div class="py-3">
                         <h3 class="font-bold text-black">Todays Pick</h3>
                     </div>
-                    <div class="grid grid-cols-2 md:grid-cols-6 gap-2 sm:gap-5 md:gap-10 border-gray-500 p-5 bg-orange-400 rounded-lg shadow-xl drop-shadow-xl">
-                        <div class="pb-2 bg-orange-100 w-40 rounded-md border border-orange-400 shadow-md drop-shadow-md">
+                    <div class="grid grid-cols-2 md:grid-cols-6 gap-2 sm:gap-5 md:gap-10 border-gray-500 p-5 bg-green-300 rounded-lg shadow-xl drop-shadow-xl">
+                        <div class="pb-2 bg-green-100 w-40 rounded-md border border-green-300 shadow-md drop-shadow-md">
+                            <div class="flex justify-center">
+                                <img class="md:w-36 md:h-36 sm:w-32 sm:h-32 w-28 h-28"src="img/laptop.png" alt="laptop">
+                            </div>
+                            <div class="flex flex-col mx-2 text-xs">
+                                <p>Laptop</p>
+                                <p class="font-bold"><span>₱</span>10,000.00</p>
+                                <div class="flex  gap-1">
+                                    <p><span class="fa fa-check-circle text-blue-500"></span>ralph</span></p>
+                                    <p>|</p>
+                                    <p>Cebu City</p>
+                                </div>
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Donate-->
+                <div class="donatedItem">
+                    <div class="py-3">
+                        <h3 class="font-bold text-black">Donated Items</h3>
+                    </div>
+                    <div class="grid grid-cols-2 md:grid-cols-6 gap-2 sm:gap-5 md:gap-10 border-gray-500 p-5 bg-green-300 rounded-lg shadow-xl drop-shadow-xl">
+                        <div class="pb-2 bg-green-100 w-40 rounded-md border border-green-300 shadow-md drop-shadow-md">
                             <div class="flex justify-center">
                                 <img class="md:w-36 md:h-36 sm:w-32 sm:h-32 w-28 h-28"src="img/laptop.png" alt="laptop">
                             </div>
@@ -208,7 +227,7 @@
             <!--try if col is working-->
             
             <!--footer-->
-            <div class="bg-orange-400 h-16 mt-5">
+            <div class="bg-green-900 h-16 m-0 p-0 ">
     
             </div>
         </div>
@@ -227,17 +246,22 @@
         const showModal = document.querySelector('.showModal')
         const menuBtn = document.querySelector('.menuBtn')
         const showMenu = document.querySelector('.showMenu')
-        const mainContainer= document.querySelector('.mainContainer')
+        const mainContainer = document.querySelector('.mainContainer')
+        const subContainer = document.querySelector('.subContainer')
 
         showModal.addEventListener('click',function(){
             nav.classList.add('hidden')
             modal.classList.remove('hidden')
+            main.classList.add('hidden')
+            subContainer.classList.add('hidden')
         })
         const cancelBtn = document.querySelector('.cancelBtn')
         cancelBtn.addEventListener('click',function(){
             nav.classList.remove('hidden')
             modal.classList.add('hidden')
             showMenu.classList.add('hidden')
+            main.classList.remove('hidden')
+            subContainer.classList.remove('hidden')
 
         })
         
@@ -262,9 +286,12 @@
         mobileNotifBtn.addEventListener('click',function(){
             webNotif.classList.toggle('hidden')
         })
+        const main = document.querySelector('.main')
         const webSearchBtn = document.querySelector('.webSearchBtn')
         webSearchBtn.addEventListener('click',function(){
             modal.classList.remove('hidden')
+            main.classList.add('hidden')
+            subContainer.classList.add('hidden')
         })
     </script>
 </body>
