@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+    <!--Style-->
+    <link rel="stylesheet" href="output.css">
+    <!--ICONS-->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--Fonts-->
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Lexend Tera' rel='stylesheet'>
+    <!--EDUSHOP FONTS-->
+    <style>
+        body{
+            font-family: 'Poppins';
+        }
+        h2{
+            font-family:'Lexend Tera';
+        }
+    </style>
+</head>
+<body>
+    <!--whole-container-->
+    <div class="max-h-full w-full">
+        <!--Header-->
+        <header class="header bg-gray-100 px-2 w-full">
+            <nav class="nav flex justify-between items-center">
+                <div>
+                    <img class="w-95 h-10" src="img/logo.png" alt="logo">
+                </div>
+                <div class="flex items-center gap-4 md:hidden">
+                    <button class="showModal fa fa-search cursor-pointer bg-gray-100 border-gray-100 hover:border-gray-200 hover:bg-gray-200 p-2 rounded-full"style="font-size: 18px;"></button>
+                    <button class="mobileNotifBtn fa fa-bell border-2 bg-gray-100 border-gray-100 hover:border-gray-200 hover:bg-gray-200 p-2 rounded-full" style="font-size: 18px; color: transparent; -webkit-text-stroke: 2px black;"></button>
+                    <ion-icon class="menuBtn mr-2 text-3xl cursor-pointer bg-gray-100 border-gray-100 hover:border-gray-200 hover:bg-gray-200 p-1 rounded-full"name="menu-outline"></ion-icon>
+                </div>
+                <div class="nav-links text-xs md:static md:min-h-fit absolute bg-gray-100 min-h-[13vh] left-0 md:w-auto w-full flex items-center px-5 top-[-100%]">
+                    <ul class="flex md:flex-row flex-col md:items-center md:gap-2 gap-1 text-center">
+                        <li class="hover:text-orange-500"><a class="cursor-pointer">Help</a></li>
+                        <span class="hidden md:block">|</span>
+                        <li class="webNotifBtn hover:text-orange-500"><a class="cursor-pointer"><i class="fa fa-bell"></i></a></li>
+                        <span class="hidden md:block">|</span>
+                        <li class="profileBtn hover:text-orange-500"><a class="cursor-pointer">Ralph</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <!--Notification-->
+            <div class="webNotif bg-gray-100 w-52 h-auto absolute right-1 rounded-md px-4 py-2 hidden">
+                <div class="bg-transparent hover:bg-gray-300 px-2 rounded-md">
+                    <a class="text-xs" href="#"><span class="font-bold">Borgard</span> sent you an offer</a>
+                </div>
+                <div class="bg-transparent hover:bg-gray-300 px-2 rounded-md">
+                    <a class="text-xs" href="#"><span class="font-bold">Borgard</span> sent you an offer</a>
+                </div>
+                <div class="bg-transparent hover:bg-gray-300 px-2 rounded-md">
+                    <a class="text-xs" href="#"><span class="font-bold">Borgard</span> sent you an offer</a>
+                </div>
+            </div>
+            <!--Profile Menu-->
+            <div class="webMenu px-4 py-2 bg-gray-100 w-52 h-auto absolute right-1 rounded-md hidden">
+                <div class="bg-transparent hover:bg-gray-300 px-2 rounded-md">
+                    <a class="text-sm" href="#"><span class="mr-2 mt-2"><ion-icon name="person-circle-outline"></ion-icon></span>My profile</a>
+                </div>
+                <div class="bg-transparent hover:bg-gray-300 px-2 rounded-md">
+                    <a class="text-sm" href="#"><span class="mr-2 mt-2"><ion-icon name="list-circle-outline"></ion-icon></span>Listing</a>
+                </div>
+                <div class="bg-transparent hover:bg-gray-300 px-2 rounded-md">
+                    <a class="text-sm" href="#"><span class="mr-2 mt-2"><ion-icon name="eye-outline"></ion-icon></span>Watchlist</a>
+                </div>
+                <div class="bg-transparent hover:bg-gray-300 px-2 rounded-md">
+                    <a class="text-sm" href="#"><span class="mr-2 mt-2"><ion-icon name="log-in-outline"></ion-icon></span>Logout</a>
+                </div>
+            </div>
+            <!--Search Modal-->
+            <div class="modal h-screen w-[%100] ml-10 mr-10 pt-5 hidden">
+                <button class="cancelBtn font-bold ml-3 mr-5 md:mr-10  hover:text-gray-400 absolute md:right-5 right-0">Cancel</button>
+                <center>
+                    <input class="w-[70%] md:w-96 rounded-full pl-2 border-2 border-gray-400" type="text" name="s" id="s" placeholder="Search">
+                    <br><br>
+                    <span class="text-gray-500">Popular Search Items</span>
+                </center>
+  
+            </div>
+            <div class="showMenu h-screen w-full hidden">
+                <div class="px-5 pt-5 ">
+                    <h1 class="font-bold">Menu</h1>
+                </div>
+                <div class="px-5 flex border-b-2 border-gray-400">
+                    <div>
+                        <img src="img/laptop.jpg" alt="profile" class="w-10 h-10 rounded-full mt-2">
+                    </div>
+                    <div class="mb-5">
+                        <p class="mx-2 mt-2 text-xs font-bold">Ralph Evan D. Cabellon</p>
+                        <a class="mx-2 text-xs text-blue-700 underline" href="#">Edit Profile</a>  
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 sm:grid-cols-3 px-5 py-3 gap-2 border-b-2">
+                    <div class="border-2 border-white rounded-md w-40 h-20 bg-white text-center justify-center pt-2 shadow-lg drop-shadow-lg">
+                        <a class="font-bold"href="#">Listing</a><br>
+                        <span><i class="fa fa-address-book-o"></i></span>
+                    </div>
+                    <div class="border-2 border-white rounded-md w-40 h-20 bg-white text-center justify-center pt-2 shadow-lg drop-shadow-lg">
+                        <a class="font-bold"href="#">Favorites</a><br>
+                        <span><i class="fa fa-heart"></i></span>
+                    </div>
+                    <div class="border-2 border-white rounded-md w-40 h-20 bg-white text-center justify-center pt-2 shadow-lg drop-shadow-lg">
+                        <a class="font-bold"href="#">Watchist</a><br>
+                        <span><i class="fa fa-eye"></i></span>
+                    </div>
+                    <div class="border-2 border-white rounded-md w-40 h-20 bg-white text-center justify-center pt-2 shadow-lg drop-shadow-lg">
+                        <a class="font-bold"href="#">Listing</a>
+                    </div>
+                    <div class="border-2 border-white rounded-md w-40 h-20 bg-white text-center justify-center pt-2 shadow-lg drop-shadow-lg">
+                        <a class="font-bold"href="#">Listing</a>
+                    </div>
+                    <div class="border-2 border-white rounded-md w-40 h-20 bg-white text-center justify-center pt-2 shadow-lg drop-shadow-lg">
+                        <a class="font-bold"href="#">Listing</a>
+                    </div>
+                </div>
+                <div class="mt-5">
+                    <button class="w-full border-2 border-gray-600 bg-gray-600 text-white rounded-xl font-bold cursor-pointer">Logout</button>
+                </div>
+                
+
+            </div>
+        </header>
+
+        <!--Menu Option-->
+        <div class="text-center font-bold text-3xl py-2">
+            <h2>EDUSHOP</h2>
+        </div>
+        <div class="py-2" >
+
+           <nav class="flex justify-center">
+            <ul class="flex md:gap-40 gap-10 font-bold">
+                <li class="hover:text-orange-500"><a class="text-orange-500" href="#">HOME</a></li>
+                <li class="hover:text-orange-500"><a href="#">SELL</a></li>
+                <li class="hover:text-orange-500"><a href="#">AUCTION</a></li>
+            </ul>
+           </nav>
+           <style>
+           </style>
+            <div class="hidden md:block float-end mr-4">
+                <button class="webSearchBtn border-2 border-gray-500 p-1 w-36 rounded-full font-bold text-gray-400 bg-transparent hover:bg-gray-100 hover:text-gray-800 hover:border-gray-800"><span class="fa fa-search mr-1"></span>Search</button>
+                <button class="fa fa-heart mr-4 border-2 bg-white border-white hover:border-gray-200 hover:bg-gray-200 p-2 rounded-full" style="font-size: 20px; color: transparent; -webkit-text-stroke: 2px black;"></button>
+            </div>
+        </div>
+
+    <!-- Main Chat -->
+<div class="container mx-auto shadow-2xl shadow-slate-800 rounded-lg mt-24 w-full">
+
+    <!-- header -->
+<!-- <div class="px-5 py-5 flex justify-between items-center bg-orange-100 border-b-2">
+  <div class="font-semibold text-2xl">EduShop</div>
+
+  <div
+    class="h-12 w-12 p-2 bg-orange-500 rounded-full text-white font-semibold flex items-center justify-center"
+  >
+    RA
+  </div>
+</div> -->
+<!-- end header -->
+
+<!-- Chatting -->
+<div class="flex flex-row justify-between bg-orange-50 py-11">
+  <!-- chat list -->
+  <div class="flex flex-col w-2/5 border-r-2 overflow-y-auto border-b-2">
+    <!-- search compt -->
+    <div class="border-b-2 py-4 px-2">
+      <input
+        type="text"
+        placeholder="search chatting"
+        class="py-2 px-2 border-2 border-gray-200 rounded-2xl w-full"
+      />
+    </div>
+    <!-- end search compt -->
+    <!-- user list -->
+    <div class="flex flex-row py-4 px-2 justify-center items-center border-b-2">
+      <div class="w-1/4">
+        <img
+          src="https://source.unsplash.com/_7LbC5J-jw4/600x600"
+          class="object-cover h-12 w-12 rounded-full"
+          alt=""
+        />
+      </div>
+      <div class="w-full">
+        <div class="text-lg font-semibold">Ralph Evan</div>
+        <span class="text-gray-500">Pick me at 9:00 Am</span>
+      </div>
+    </div>
+
+    <!-- end user list -->
+  </div>
+  <!-- end chat list -->
+
+  <!-- message -->
+  <div class="w-full px-5 flex flex-col justify-between border-b-2">
+    <div class="flex flex-col mt-5">
+      <div class="flex justify-end mb-4">
+        <div
+          class="mr-2 py-3 px-4 bg-blue-400 rounded-bl-3xl rounded-tl-3xl rounded-tr-xl text-white"
+        >
+          Welcome to group everyone !
+        </div>
+        <img
+          src="https://source.unsplash.com/vpOeXr5wmR4/600x600"
+          class="object-cover h-8 w-8 rounded-full"
+          alt=""
+        />
+      </div>
+      <div class="flex justify-start mb-4">
+        <img
+          src="https://source.unsplash.com/vpOeXr5wmR4/600x600"
+          class="object-cover h-8 w-8 rounded-full"
+          alt=""
+        />
+        <div
+          class="ml-2 py-3 px-4 bg-gray-400 rounded-br-3xl rounded-tr-3xl rounded-tl-xl text-white"
+        >
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat
+          at praesentium, aut ullam delectus odio error sit rem. Architecto
+          nulla doloribus laborum illo rem enim dolor odio saepe,
+          consequatur quas?
+        </div>
+      </div>
+      <div class="flex justify-end mb-4">
+        <div>
+          <div
+            class="mr-2 py-3 px-4 bg-blue-400 rounded-bl-3xl rounded-tl-3xl rounded-tr-xl text-white"
+          >
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+            Magnam, repudiandae.
+          </div>
+
+          <div
+            class="mt-4 mr-2 py-3 px-4 bg-blue-400 rounded-bl-3xl rounded-tl-3xl rounded-tr-xl text-white"
+          >
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Debitis, reiciendis!
+          </div>
+        </div>
+        <img
+          src="https://source.unsplash.com/vpOeXr5wmR4/600x600"
+          class="object-cover h-8 w-8 rounded-full"
+          alt=""
+        />
+      </div>
+      <div class="flex justify-start mb-4">
+        <img
+          src="https://source.unsplash.com/vpOeXr5wmR4/600x600"
+          class="object-cover h-8 w-8 rounded-full"
+          alt=""
+        />
+        <div
+          class="ml-2 py-3 px-4 bg-gray-400 rounded-br-3xl rounded-tr-3xl rounded-tl-xl text-white"
+        >
+          happy holiday guys!
+        </div>
+      </div>
+    </div>
+    <div class="py-5 flex">
+      <input
+        class="w-full bg-gray-300 py-5 px-3 rounded-xl"
+        type="text"
+        placeholder="type your message here..."
+      />
+    
+    <Button
+    class="w-fit bg-orange-500 py-5 px-3 ml-3 rounded-xl shadow-lg text-white hover:bg-white hover:text-orange-500"
+    type="submit"
+    >
+     <i class="fa fa-paper-plane mx-1"> </i>Send
+    </Button>
+
+    </div>
+  </div>
+
+  <!-- end message -->
+  <div class="w-2/5 border-l-2 px-5 border-b-2 py-5">
+    <div class="flex flex-col">
+      <div class="font-semibold text-xl py-4">Laptop</div>
+      <img
+        src="img/laptop.png"
+        class="object-cover rounded-xl h-64 shadow-lg shadow-black"
+        alt=""
+      />
+      <div class="font-semibold py-4">Posted 22 Sep 2021</div>
+      <div class="font-semibold py-4">PHP 20,000</div>
+      <div class="font-light">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt,
+        perspiciatis!
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</body>
+</html>
